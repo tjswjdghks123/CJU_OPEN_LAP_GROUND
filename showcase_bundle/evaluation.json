@@ -1,0 +1,32 @@
+{
+  "train": {
+    "tp": 150,
+    "fn": 10,
+    "fp": 2,
+    "tn": 6870,
+    "recall": 0.9375,
+    "precision": 0.9868421052631579,
+    "false_positive_rate": 0.0002910360884749709,
+    "f1": 0.9615384615384616
+  },
+  "validation": {
+    "tp": 40,
+    "fn": 0,
+    "fp": 0,
+    "tn": 1429,
+    "recall": 1.0,
+    "precision": 1.0,
+    "false_positive_rate": 0.0,
+    "f1": 1.0
+  },
+  "test": {
+    "tp": 39,
+    "fn": 1,
+    "fp": 0,
+    "tn": 1465,
+    "recall": 0.975,
+    "precision": 1.0,
+    "false_positive_rate": 0.0,
+    "f1": 0.9873417721518988
+  }
+}

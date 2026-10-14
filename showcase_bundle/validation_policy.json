@@ -1,0 +1,5 @@
+{
+  "threshold": 0.9744,
+  "selection_data": "validation only",
+  "max_fpr": 0.01
+}

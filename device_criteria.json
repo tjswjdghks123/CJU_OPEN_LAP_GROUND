@@ -1,0 +1,25 @@
+{
+  "version": "device-count-v2",
+  "source": "User-provided device deterioration criteria",
+  "threshold_comparison": ">=",
+  "equipment_thresholds": {
+    "ground_potential_a": 2.0,
+    "ground_potential_b": 2.0,
+    "leakage_current": 0.002,
+    "element_temperature_a": 45.0,
+    "element_temperature_b": 45.0,
+    "element_temperature_c": 45.0
+  },
+  "environment_reference_values": {
+    "relative_humidity": 70.0,
+    "ambient_temperature": 25.0
+  },
+  "input_voltage_threshold": null,
+  "lightning_raw_field": "lightning_count_total",
+  "lightning_transform": "log1p(nonnegative count increase per one-second interval)",
+  "counter_decrease_policy": "reset baseline and prediction history; never count decrease as a new strike",
+  "thermal_rule": "evaluate a/b/c independently; temperature alone is not lightning evidence",
+  "voltage_goal_V": 0.0,
+  "voltage_goal_status": "simulation target only; independent output-voltage feedback required for verification",
+  "hardware_commands_enabled": false
+}

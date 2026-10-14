@@ -1,0 +1,64 @@
+{
+  "raw_features": [
+    "ground_potential_a",
+    "ground_potential_b",
+    "leakage_current",
+    "element_temperature_a",
+    "element_temperature_b",
+    "element_temperature_c",
+    "relative_humidity",
+    "ambient_temperature",
+    "input_voltage",
+    "lightning_count_total"
+  ],
+  "model_features": [
+    "ground_potential_a",
+    "ground_potential_b",
+    "leakage_current",
+    "element_temperature_a",
+    "element_temperature_b",
+    "element_temperature_c",
+    "relative_humidity",
+    "ambient_temperature",
+    "input_voltage",
+    "lightning_activity_log1p"
+  ],
+  "transform_version": "count-delta-log1p-per-second-v2",
+  "threshold": 0.9744,
+  "score_decimals": 4,
+  "lookback_seconds": 30,
+  "forecast_seconds": 10,
+  "target": "independent_event_in_next_10s; not validated first-strike prediction",
+  "data_origin": "synthetic",
+  "source_manifest": {
+    "raw_features": [
+      "ground_potential_a",
+      "ground_potential_b",
+      "leakage_current",
+      "element_temperature_a",
+      "element_temperature_b",
+      "element_temperature_c",
+      "relative_humidity",
+      "ambient_temperature",
+      "input_voltage",
+      "lightning_count_total"
+    ],
+    "data_origin": "synthetic",
+    "seed": 12000,
+    "episodes": 72,
+    "pattern": "invented 35-second joint ground-voltage/leakage ramp",
+    "physical_precursor_validated": false,
+    "event_labels": "invented events; never measured lightning",
+    "slow_sensors": "temperatures held 60s; humidity/ambient held throughout each episode"
+  },
+  "criteria_are_lightning_labels": false,
+  "real_lightning_prediction_validated": false,
+  "production_ready": false,
+  "automatic_control_allowed": false,
+  "artifacts": {
+    "count_model.keras": "55fbe69ed28d68e4fa9dd67cd96c3235d5601a00e320e0db72b8ad264288fa09",
+    "scaler.npz": "9e1154c2bca2710731a2f74f8ef212656a4ea5531cb78c9438ef7ec420431a30"
+  },
+  "frames_sha256": "82d6fb58cb417265be39738daca0cb9b5f0226886b94abbc49fdd6baa30c8668",
+  "events_sha256": "4128476ebb133518274ef34f1ed2992d0197ed634dd472f8d11671512ff160fe"
+}
