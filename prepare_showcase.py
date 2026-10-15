@@ -5,10 +5,15 @@ from pathlib import Path
 import numpy as np
 from device_server import RAW_FEATURES, PERIODS
 
-def episode(seed, kind, seconds=180, start=0):
+def episode(seed, kind, seconds=180, start=0, initial_count=1000, pattern_scale=1., noise_scale=1.):
+    if isinstance(initial_count, bool) or not isinstance(initial_count, int) or initial_count < 0:
+        raise ValueError('initial_count must be a nonnegative integer')
+    if not np.isfinite([pattern_scale, noise_scale]).all() or min(pattern_scale, noise_scale) < 0:
+        raise ValueError('pattern/noise scales must be finite and nonnegative')
     rng = np.random.default_rng(seed)
     event = int(rng.integers(115, 140)) if kind == 'synthetic_precursor' else None
-    count = 1000
+    # Arbitrary baseline, NOT 1000 observed strikes. Only differences enter the model.
+    count = initial_count
     base = np.array([.8, .85, .0014, 34., 35., 33., 63., 23., 220.])
     base[:2] += rng.uniform(-.12, .12, 2)
     base[3:6] += rng.uniform(-3, 3, 3)
@@ -16,9 +21,10 @@ def episode(seed, kind, seconds=180, start=0):
     temperature = base[3:6].copy()
     for t in range(seconds):
         x = base.copy()
-        x[:2] += rng.normal(0, .025, 2)
-        x[2] += rng.normal(0, .00003)
-        x[8] += rng.normal(0, 1.3)
+        x[:2] += rng.normal(0, .025, 2) * noise_scale
+        x[2] += rng.normal(0, .00003) * noise_scale
+        x[2] = max(.001, x[2])
+        x[8] += rng.normal(0, 1.3) * noise_scale
         if t % 60 == 0:
             temperature = base[3:6] + rng.normal(0, .4, 3)
             if kind == 'thermal_only': temperature += [18, 15, 12]
@@ -28,8 +34,8 @@ def episode(seed, kind, seconds=180, start=0):
         if event is not None and event - 35 <= t < event:
             # Deliberately invented co-ramp, not a scientifically established signal.
             ramp = (t - event + 35) / 35
-            x[:2] += ramp * np.array([2.1, 1.9])
-            x[2] += ramp * .0016
+            x[:2] += ramp * np.array([2.1, 1.9]) * pattern_scale
+            x[2] += ramp * .0016 * pattern_scale
         if t == event: count += 1
         frame = dict(zip(RAW_FEATURES, x.tolist() + [count]))
         frame['time_s'] = start + t

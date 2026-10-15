@@ -1,0 +1,3883 @@
+{
+  "synthetic_only": true,
+  "real_lightning_prediction_validated": false,
+  "model_refitted": false,
+  "threshold_retuned": false,
+  "threshold": 0.9744,
+  "seed_start": 200000,
+  "seed_count": 30,
+  "seed_stride": 10,
+  "model_artifacts_sha256": {
+    "count_model.keras": "55fbe69ed28d68e4fa9dd67cd96c3235d5601a00e320e0db72b8ad264288fa09",
+    "scaler.npz": "9e1154c2bca2710731a2f74f8ef212656a4ea5531cb78c9438ef7ec420431a30"
+  },
+  "profiles": [
+    {
+      "id": "standard",
+      "name": "기존 합성 규칙 · 난수 변화",
+      "pattern_scale": 1.0,
+      "noise_scale": 1.0,
+      "kinds": null,
+      "metrics": {
+        "tp": 290,
+        "fp": 6,
+        "fn": 10,
+        "tn": 22194,
+        "window_recall": 0.9666666666666667,
+        "window_precision": 0.9797297297297297,
+        "window_fpr": 0.0002702702702702703,
+        "events": 30,
+        "event_hits": 30,
+        "event_misses": 0,
+        "event_recall": 1.0,
+        "no_event_episodes": 120,
+        "false_alert_episodes": 0,
+        "false_episode_rate": 0.0,
+        "lead_seconds": [
+          10,
+          10,
+          9,
+          9,
+          10,
+          10,
+          10,
+          9,
+          10,
+          10,
+          9,
+          10,
+          10,
+          9,
+          10,
+          9,
+          10,
+          10,
+          10,
+          10,
+          8,
+          10,
+          10,
+          10,
+          10,
+          9,
+          10,
+          10,
+          9,
+          10
+        ],
+        "lead_median": 10.0
+      },
+      "trials": [
+        {
+          "base_seed": 200000,
+          "metrics": {
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "tn": 740,
+            "window_recall": 1.0,
+            "window_precision": 1.0,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              10
+            ],
+            "lead_median": 10.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200000,
+              "summary": {
+                "max_score": 0.001,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200001,
+              "summary": {
+                "max_score": 0.0007,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200002,
+              "summary": {
+                "max_score": 0.0015,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200003,
+              "summary": {
+                "max_score": 0.0024,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 134,
+              "seed": 200004,
+              "summary": {
+                "max_score": 0.992,
+                "alert_rows": 10,
+                "positive_window_hits": 10,
+                "false_alert_rows": 0,
+                "lead_seconds": 10
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200010,
+          "metrics": {
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "tn": 740,
+            "window_recall": 1.0,
+            "window_precision": 1.0,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              10
+            ],
+            "lead_median": 10.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200010,
+              "summary": {
+                "max_score": 0.0015,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200011,
+              "summary": {
+                "max_score": 0.0007,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200012,
+              "summary": {
+                "max_score": 0.0027,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200013,
+              "summary": {
+                "max_score": 0.0026,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 136,
+              "seed": 200014,
+              "summary": {
+                "max_score": 0.9929,
+                "alert_rows": 10,
+                "positive_window_hits": 10,
+                "false_alert_rows": 0,
+                "lead_seconds": 10
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200020,
+          "metrics": {
+            "tp": 9,
+            "fp": 0,
+            "fn": 1,
+            "tn": 740,
+            "window_recall": 0.9,
+            "window_precision": 1.0,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              9
+            ],
+            "lead_median": 9.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200020,
+              "summary": {
+                "max_score": 0.0015,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200021,
+              "summary": {
+                "max_score": 0.0008,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200022,
+              "summary": {
+                "max_score": 0.0015,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200023,
+              "summary": {
+                "max_score": 0.0031,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 124,
+              "seed": 200024,
+              "summary": {
+                "max_score": 0.9941,
+                "alert_rows": 9,
+                "positive_window_hits": 9,
+                "false_alert_rows": 0,
+                "lead_seconds": 9
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200030,
+          "metrics": {
+            "tp": 9,
+            "fp": 0,
+            "fn": 1,
+            "tn": 740,
+            "window_recall": 0.9,
+            "window_precision": 1.0,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              9
+            ],
+            "lead_median": 9.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200030,
+              "summary": {
+                "max_score": 0.001,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200031,
+              "summary": {
+                "max_score": 0.0008,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200032,
+              "summary": {
+                "max_score": 0.0015,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200033,
+              "summary": {
+                "max_score": 0.0021,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 130,
+              "seed": 200034,
+              "summary": {
+                "max_score": 0.9937,
+                "alert_rows": 9,
+                "positive_window_hits": 9,
+                "false_alert_rows": 0,
+                "lead_seconds": 9
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200040,
+          "metrics": {
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "tn": 740,
+            "window_recall": 1.0,
+            "window_precision": 1.0,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              10
+            ],
+            "lead_median": 10.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200040,
+              "summary": {
+                "max_score": 0.0012,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200041,
+              "summary": {
+                "max_score": 0.0007,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200042,
+              "summary": {
+                "max_score": 0.0015,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200043,
+              "summary": {
+                "max_score": 0.0031,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 123,
+              "seed": 200044,
+              "summary": {
+                "max_score": 0.9927,
+                "alert_rows": 10,
+                "positive_window_hits": 10,
+                "false_alert_rows": 0,
+                "lead_seconds": 10
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200050,
+          "metrics": {
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "tn": 740,
+            "window_recall": 1.0,
+            "window_precision": 1.0,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              10
+            ],
+            "lead_median": 10.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200050,
+              "summary": {
+                "max_score": 0.0016,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200051,
+              "summary": {
+                "max_score": 0.0007,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200052,
+              "summary": {
+                "max_score": 0.0015,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200053,
+              "summary": {
+                "max_score": 0.0064,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 115,
+              "seed": 200054,
+              "summary": {
+                "max_score": 0.9939,
+                "alert_rows": 10,
+                "positive_window_hits": 10,
+                "false_alert_rows": 0,
+                "lead_seconds": 10
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200060,
+          "metrics": {
+            "tp": 10,
+            "fp": 1,
+            "fn": 0,
+            "tn": 739,
+            "window_recall": 1.0,
+            "window_precision": 0.9090909090909091,
+            "window_fpr": 0.0013513513513513514,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              10
+            ],
+            "lead_median": 10.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200060,
+              "summary": {
+                "max_score": 0.0014,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200061,
+              "summary": {
+                "max_score": 0.0007,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200062,
+              "summary": {
+                "max_score": 0.0015,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200063,
+              "summary": {
+                "max_score": 0.0074,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 118,
+              "seed": 200064,
+              "summary": {
+                "max_score": 0.9923,
+                "alert_rows": 11,
+                "positive_window_hits": 10,
+                "false_alert_rows": 1,
+                "lead_seconds": 10
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200070,
+          "metrics": {
+            "tp": 9,
+            "fp": 0,
+            "fn": 1,
+            "tn": 740,
+            "window_recall": 0.9,
+            "window_precision": 1.0,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              9
+            ],
+            "lead_median": 9.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200070,
+              "summary": {
+                "max_score": 0.001,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200071,
+              "summary": {
+                "max_score": 0.0007,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200072,
+              "summary": {
+                "max_score": 0.0019,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200073,
+              "summary": {
+                "max_score": 0.0028,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 136,
+              "seed": 200074,
+              "summary": {
+                "max_score": 0.9915,
+                "alert_rows": 9,
+                "positive_window_hits": 9,
+                "false_alert_rows": 0,
+                "lead_seconds": 9
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200080,
+          "metrics": {
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "tn": 740,
+            "window_recall": 1.0,
+            "window_precision": 1.0,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              10
+            ],
+            "lead_median": 10.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200080,
+              "summary": {
+                "max_score": 0.0011,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200081,
+              "summary": {
+                "max_score": 0.0007,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200082,
+              "summary": {
+                "max_score": 0.002,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200083,
+              "summary": {
+                "max_score": 0.0025,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 137,
+              "seed": 200084,
+              "summary": {
+                "max_score": 0.9927,
+                "alert_rows": 10,
+                "positive_window_hits": 10,
+                "false_alert_rows": 0,
+                "lead_seconds": 10
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200090,
+          "metrics": {
+            "tp": 10,
+            "fp": 1,
+            "fn": 0,
+            "tn": 739,
+            "window_recall": 1.0,
+            "window_precision": 0.9090909090909091,
+            "window_fpr": 0.0013513513513513514,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              10
+            ],
+            "lead_median": 10.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200090,
+              "summary": {
+                "max_score": 0.0011,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200091,
+              "summary": {
+                "max_score": 0.0007,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200092,
+              "summary": {
+                "max_score": 0.0015,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200093,
+              "summary": {
+                "max_score": 0.0021,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 138,
+              "seed": 200094,
+              "summary": {
+                "max_score": 0.9942,
+                "alert_rows": 11,
+                "positive_window_hits": 10,
+                "false_alert_rows": 1,
+                "lead_seconds": 10
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200100,
+          "metrics": {
+            "tp": 9,
+            "fp": 0,
+            "fn": 1,
+            "tn": 740,
+            "window_recall": 0.9,
+            "window_precision": 1.0,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              9
+            ],
+            "lead_median": 9.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200100,
+              "summary": {
+                "max_score": 0.001,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200101,
+              "summary": {
+                "max_score": 0.0007,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200102,
+              "summary": {
+                "max_score": 0.0015,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200103,
+              "summary": {
+                "max_score": 0.002,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 121,
+              "seed": 200104,
+              "summary": {
+                "max_score": 0.9959,
+                "alert_rows": 9,
+                "positive_window_hits": 9,
+                "false_alert_rows": 0,
+                "lead_seconds": 9
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200110,
+          "metrics": {
+            "tp": 10,
+            "fp": 2,
+            "fn": 0,
+            "tn": 738,
+            "window_recall": 1.0,
+            "window_precision": 0.8333333333333334,
+            "window_fpr": 0.002702702702702703,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              10
+            ],
+            "lead_median": 10.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200110,
+              "summary": {
+                "max_score": 0.0012,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200111,
+              "summary": {
+                "max_score": 0.0008,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200112,
+              "summary": {
+                "max_score": 0.0014,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200113,
+              "summary": {
+                "max_score": 0.0029,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 133,
+              "seed": 200114,
+              "summary": {
+                "max_score": 0.9944,
+                "alert_rows": 12,
+                "positive_window_hits": 10,
+                "false_alert_rows": 2,
+                "lead_seconds": 10
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200120,
+          "metrics": {
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "tn": 740,
+            "window_recall": 1.0,
+            "window_precision": 1.0,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              10
+            ],
+            "lead_median": 10.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200120,
+              "summary": {
+                "max_score": 0.0014,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200121,
+              "summary": {
+                "max_score": 0.0007,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200122,
+              "summary": {
+                "max_score": 0.0016,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200123,
+              "summary": {
+                "max_score": 0.0022,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 116,
+              "seed": 200124,
+              "summary": {
+                "max_score": 0.9923,
+                "alert_rows": 10,
+                "positive_window_hits": 10,
+                "false_alert_rows": 0,
+                "lead_seconds": 10
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200130,
+          "metrics": {
+            "tp": 9,
+            "fp": 0,
+            "fn": 1,
+            "tn": 740,
+            "window_recall": 0.9,
+            "window_precision": 1.0,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              9
+            ],
+            "lead_median": 9.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200130,
+              "summary": {
+                "max_score": 0.0013,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200131,
+              "summary": {
+                "max_score": 0.0008,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200132,
+              "summary": {
+                "max_score": 0.0013,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200133,
+              "summary": {
+                "max_score": 0.0058,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 130,
+              "seed": 200134,
+              "summary": {
+                "max_score": 0.9937,
+                "alert_rows": 9,
+                "positive_window_hits": 9,
+                "false_alert_rows": 0,
+                "lead_seconds": 9
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200140,
+          "metrics": {
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "tn": 740,
+            "window_recall": 1.0,
+            "window_precision": 1.0,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              10
+            ],
+            "lead_median": 10.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200140,
+              "summary": {
+                "max_score": 0.0011,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200141,
+              "summary": {
+                "max_score": 0.0007,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200142,
+              "summary": {
+                "max_score": 0.0019,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200143,
+              "summary": {
+                "max_score": 0.0033,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 129,
+              "seed": 200144,
+              "summary": {
+                "max_score": 0.9949,
+                "alert_rows": 10,
+                "positive_window_hits": 10,
+                "false_alert_rows": 0,
+                "lead_seconds": 10
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200150,
+          "metrics": {
+            "tp": 9,
+            "fp": 0,
+            "fn": 1,
+            "tn": 740,
+            "window_recall": 0.9,
+            "window_precision": 1.0,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              9
+            ],
+            "lead_median": 9.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200150,
+              "summary": {
+                "max_score": 0.001,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200151,
+              "summary": {
+                "max_score": 0.0007,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200152,
+              "summary": {
+                "max_score": 0.0013,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200153,
+              "summary": {
+                "max_score": 0.0038,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 122,
+              "seed": 200154,
+              "summary": {
+                "max_score": 0.9913,
+                "alert_rows": 9,
+                "positive_window_hits": 9,
+                "false_alert_rows": 0,
+                "lead_seconds": 9
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200160,
+          "metrics": {
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "tn": 740,
+            "window_recall": 1.0,
+            "window_precision": 1.0,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              10
+            ],
+            "lead_median": 10.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200160,
+              "summary": {
+                "max_score": 0.0011,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200161,
+              "summary": {
+                "max_score": 0.0007,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200162,
+              "summary": {
+                "max_score": 0.0014,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200163,
+              "summary": {
+                "max_score": 0.0026,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 126,
+              "seed": 200164,
+              "summary": {
+                "max_score": 0.9938,
+                "alert_rows": 10,
+                "positive_window_hits": 10,
+                "false_alert_rows": 0,
+                "lead_seconds": 10
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200170,
+          "metrics": {
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "tn": 740,
+            "window_recall": 1.0,
+            "window_precision": 1.0,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              10
+            ],
+            "lead_median": 10.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200170,
+              "summary": {
+                "max_score": 0.0013,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200171,
+              "summary": {
+                "max_score": 0.0008,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200172,
+              "summary": {
+                "max_score": 0.0019,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200173,
+              "summary": {
+                "max_score": 0.0044,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 127,
+              "seed": 200174,
+              "summary": {
+                "max_score": 0.9947,
+                "alert_rows": 10,
+                "positive_window_hits": 10,
+                "false_alert_rows": 0,
+                "lead_seconds": 10
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200180,
+          "metrics": {
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "tn": 740,
+            "window_recall": 1.0,
+            "window_precision": 1.0,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              10
+            ],
+            "lead_median": 10.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200180,
+              "summary": {
+                "max_score": 0.0016,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200181,
+              "summary": {
+                "max_score": 0.0007,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200182,
+              "summary": {
+                "max_score": 0.0017,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200183,
+              "summary": {
+                "max_score": 0.0095,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 123,
+              "seed": 200184,
+              "summary": {
+                "max_score": 0.994,
+                "alert_rows": 10,
+                "positive_window_hits": 10,
+                "false_alert_rows": 0,
+                "lead_seconds": 10
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200190,
+          "metrics": {
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "tn": 740,
+            "window_recall": 1.0,
+            "window_precision": 1.0,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              10
+            ],
+            "lead_median": 10.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200190,
+              "summary": {
+                "max_score": 0.0013,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200191,
+              "summary": {
+                "max_score": 0.0007,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200192,
+              "summary": {
+                "max_score": 0.0015,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200193,
+              "summary": {
+                "max_score": 0.0019,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 115,
+              "seed": 200194,
+              "summary": {
+                "max_score": 0.9941,
+                "alert_rows": 10,
+                "positive_window_hits": 10,
+                "false_alert_rows": 0,
+                "lead_seconds": 10
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200200,
+          "metrics": {
+            "tp": 8,
+            "fp": 0,
+            "fn": 2,
+            "tn": 740,
+            "window_recall": 0.8,
+            "window_precision": 1.0,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              8
+            ],
+            "lead_median": 8.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200200,
+              "summary": {
+                "max_score": 0.001,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200201,
+              "summary": {
+                "max_score": 0.0007,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200202,
+              "summary": {
+                "max_score": 0.0016,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200203,
+              "summary": {
+                "max_score": 0.0029,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 126,
+              "seed": 200204,
+              "summary": {
+                "max_score": 0.9948,
+                "alert_rows": 8,
+                "positive_window_hits": 8,
+                "false_alert_rows": 0,
+                "lead_seconds": 8
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200210,
+          "metrics": {
+            "tp": 10,
+            "fp": 1,
+            "fn": 0,
+            "tn": 739,
+            "window_recall": 1.0,
+            "window_precision": 0.9090909090909091,
+            "window_fpr": 0.0013513513513513514,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              10
+            ],
+            "lead_median": 10.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200210,
+              "summary": {
+                "max_score": 0.0013,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200211,
+              "summary": {
+                "max_score": 0.0008,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200212,
+              "summary": {
+                "max_score": 0.0017,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200213,
+              "summary": {
+                "max_score": 0.0032,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 115,
+              "seed": 200214,
+              "summary": {
+                "max_score": 0.9952,
+                "alert_rows": 11,
+                "positive_window_hits": 10,
+                "false_alert_rows": 1,
+                "lead_seconds": 10
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200220,
+          "metrics": {
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "tn": 740,
+            "window_recall": 1.0,
+            "window_precision": 1.0,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              10
+            ],
+            "lead_median": 10.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200220,
+              "summary": {
+                "max_score": 0.0016,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200221,
+              "summary": {
+                "max_score": 0.0008,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200222,
+              "summary": {
+                "max_score": 0.0015,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200223,
+              "summary": {
+                "max_score": 0.0036,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 133,
+              "seed": 200224,
+              "summary": {
+                "max_score": 0.9922,
+                "alert_rows": 10,
+                "positive_window_hits": 10,
+                "false_alert_rows": 0,
+                "lead_seconds": 10
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200230,
+          "metrics": {
+            "tp": 10,
+            "fp": 1,
+            "fn": 0,
+            "tn": 739,
+            "window_recall": 1.0,
+            "window_precision": 0.9090909090909091,
+            "window_fpr": 0.0013513513513513514,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              10
+            ],
+            "lead_median": 10.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200230,
+              "summary": {
+                "max_score": 0.0014,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200231,
+              "summary": {
+                "max_score": 0.0007,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200232,
+              "summary": {
+                "max_score": 0.0017,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200233,
+              "summary": {
+                "max_score": 0.0029,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 116,
+              "seed": 200234,
+              "summary": {
+                "max_score": 0.9928,
+                "alert_rows": 11,
+                "positive_window_hits": 10,
+                "false_alert_rows": 1,
+                "lead_seconds": 10
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200240,
+          "metrics": {
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "tn": 740,
+            "window_recall": 1.0,
+            "window_precision": 1.0,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              10
+            ],
+            "lead_median": 10.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200240,
+              "summary": {
+                "max_score": 0.0013,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200241,
+              "summary": {
+                "max_score": 0.0007,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200242,
+              "summary": {
+                "max_score": 0.0021,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200243,
+              "summary": {
+                "max_score": 0.003,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 135,
+              "seed": 200244,
+              "summary": {
+                "max_score": 0.9941,
+                "alert_rows": 10,
+                "positive_window_hits": 10,
+                "false_alert_rows": 0,
+                "lead_seconds": 10
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200250,
+          "metrics": {
+            "tp": 9,
+            "fp": 0,
+            "fn": 1,
+            "tn": 740,
+            "window_recall": 0.9,
+            "window_precision": 1.0,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              9
+            ],
+            "lead_median": 9.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200250,
+              "summary": {
+                "max_score": 0.0015,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200251,
+              "summary": {
+                "max_score": 0.0007,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200252,
+              "summary": {
+                "max_score": 0.0015,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200253,
+              "summary": {
+                "max_score": 0.004,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 127,
+              "seed": 200254,
+              "summary": {
+                "max_score": 0.9922,
+                "alert_rows": 9,
+                "positive_window_hits": 9,
+                "false_alert_rows": 0,
+                "lead_seconds": 9
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200260,
+          "metrics": {
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "tn": 740,
+            "window_recall": 1.0,
+            "window_precision": 1.0,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              10
+            ],
+            "lead_median": 10.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200260,
+              "summary": {
+                "max_score": 0.0012,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200261,
+              "summary": {
+                "max_score": 0.0008,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200262,
+              "summary": {
+                "max_score": 0.0015,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200263,
+              "summary": {
+                "max_score": 0.0025,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 124,
+              "seed": 200264,
+              "summary": {
+                "max_score": 0.9944,
+                "alert_rows": 10,
+                "positive_window_hits": 10,
+                "false_alert_rows": 0,
+                "lead_seconds": 10
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200270,
+          "metrics": {
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "tn": 740,
+            "window_recall": 1.0,
+            "window_precision": 1.0,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              10
+            ],
+            "lead_median": 10.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200270,
+              "summary": {
+                "max_score": 0.0011,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200271,
+              "summary": {
+                "max_score": 0.0008,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200272,
+              "summary": {
+                "max_score": 0.0015,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200273,
+              "summary": {
+                "max_score": 0.0044,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 117,
+              "seed": 200274,
+              "summary": {
+                "max_score": 0.9927,
+                "alert_rows": 10,
+                "positive_window_hits": 10,
+                "false_alert_rows": 0,
+                "lead_seconds": 10
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200280,
+          "metrics": {
+            "tp": 9,
+            "fp": 0,
+            "fn": 1,
+            "tn": 740,
+            "window_recall": 0.9,
+            "window_precision": 1.0,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              9
+            ],
+            "lead_median": 9.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200280,
+              "summary": {
+                "max_score": 0.0011,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200281,
+              "summary": {
+                "max_score": 0.0008,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200282,
+              "summary": {
+                "max_score": 0.002,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200283,
+              "summary": {
+                "max_score": 0.0057,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 135,
+              "seed": 200284,
+              "summary": {
+                "max_score": 0.9939,
+                "alert_rows": 9,
+                "positive_window_hits": 9,
+                "false_alert_rows": 0,
+                "lead_seconds": 9
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200290,
+          "metrics": {
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "tn": 740,
+            "window_recall": 1.0,
+            "window_precision": 1.0,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 1,
+            "event_misses": 0,
+            "event_recall": 1.0,
+            "no_event_episodes": 4,
+            "false_alert_episodes": 0,
+            "false_episode_rate": 0.0,
+            "lead_seconds": [
+              10
+            ],
+            "lead_median": 10.0
+          },
+          "cases": [
+            {
+              "kind": "normal",
+              "name": "정상",
+              "event": null,
+              "seed": 200290,
+              "summary": {
+                "max_score": 0.0012,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "thermal_only",
+              "name": "과열만 발생",
+              "event": null,
+              "seed": 200291,
+              "summary": {
+                "max_score": 0.0007,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "leakage_only",
+              "name": "누설만 발생",
+              "event": null,
+              "seed": 200292,
+              "summary": {
+                "max_score": 0.0019,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "voltage_step",
+              "name": "전위 상승만 발생",
+              "event": null,
+              "seed": 200293,
+              "summary": {
+                "max_score": 0.0027,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            },
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 116,
+              "seed": 200294,
+              "summary": {
+                "max_score": 0.9957,
+                "alert_rows": 10,
+                "positive_window_hits": 10,
+                "false_alert_rows": 0,
+                "lead_seconds": 10
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "weak",
+      "name": "약한 가상 전조 · 잡음 증가",
+      "pattern_scale": 0.6,
+      "noise_scale": 2.0,
+      "kinds": [
+        "synthetic_precursor"
+      ],
+      "metrics": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 300,
+        "tn": 4200,
+        "window_recall": 0.0,
+        "window_precision": null,
+        "window_fpr": 0.0,
+        "events": 30,
+        "event_hits": 0,
+        "event_misses": 30,
+        "event_recall": 0.0,
+        "no_event_episodes": 0,
+        "false_alert_episodes": 0,
+        "false_episode_rate": null,
+        "lead_seconds": [],
+        "lead_median": null
+      },
+      "trials": [
+        {
+          "base_seed": 200000,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 134,
+              "seed": 200004,
+              "summary": {
+                "max_score": 0.6711,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200010,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 136,
+              "seed": 200014,
+              "summary": {
+                "max_score": 0.8345,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200020,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 124,
+              "seed": 200024,
+              "summary": {
+                "max_score": 0.294,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200030,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 130,
+              "seed": 200034,
+              "summary": {
+                "max_score": 0.8344,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200040,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 123,
+              "seed": 200044,
+              "summary": {
+                "max_score": 0.3433,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200050,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 115,
+              "seed": 200054,
+              "summary": {
+                "max_score": 0.8625,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200060,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 118,
+              "seed": 200064,
+              "summary": {
+                "max_score": 0.8553,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200070,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 136,
+              "seed": 200074,
+              "summary": {
+                "max_score": 0.2074,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200080,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 137,
+              "seed": 200084,
+              "summary": {
+                "max_score": 0.9298,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200090,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 138,
+              "seed": 200094,
+              "summary": {
+                "max_score": 0.8744,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200100,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 121,
+              "seed": 200104,
+              "summary": {
+                "max_score": 0.5069,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200110,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 133,
+              "seed": 200114,
+              "summary": {
+                "max_score": 0.937,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200120,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 116,
+              "seed": 200124,
+              "summary": {
+                "max_score": 0.861,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200130,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 130,
+              "seed": 200134,
+              "summary": {
+                "max_score": 0.614,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200140,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 129,
+              "seed": 200144,
+              "summary": {
+                "max_score": 0.9059,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200150,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 122,
+              "seed": 200154,
+              "summary": {
+                "max_score": 0.6882,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200160,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 126,
+              "seed": 200164,
+              "summary": {
+                "max_score": 0.8041,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200170,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 127,
+              "seed": 200174,
+              "summary": {
+                "max_score": 0.9041,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200180,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 123,
+              "seed": 200184,
+              "summary": {
+                "max_score": 0.8992,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200190,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 115,
+              "seed": 200194,
+              "summary": {
+                "max_score": 0.8887,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200200,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 126,
+              "seed": 200204,
+              "summary": {
+                "max_score": 0.2648,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200210,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 115,
+              "seed": 200214,
+              "summary": {
+                "max_score": 0.9459,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200220,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 133,
+              "seed": 200224,
+              "summary": {
+                "max_score": 0.5258,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200230,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 116,
+              "seed": 200234,
+              "summary": {
+                "max_score": 0.8303,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200240,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 135,
+              "seed": 200244,
+              "summary": {
+                "max_score": 0.8909,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200250,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 127,
+              "seed": 200254,
+              "summary": {
+                "max_score": 0.2907,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200260,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 124,
+              "seed": 200264,
+              "summary": {
+                "max_score": 0.8972,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200270,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 117,
+              "seed": 200274,
+              "summary": {
+                "max_score": 0.824,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200280,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 135,
+              "seed": 200284,
+              "summary": {
+                "max_score": 0.4909,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        },
+        {
+          "base_seed": 200290,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "tn": 140,
+            "window_recall": 0.0,
+            "window_precision": null,
+            "window_fpr": 0.0,
+            "events": 1,
+            "event_hits": 0,
+            "event_misses": 1,
+            "event_recall": 0.0,
+            "no_event_episodes": 0,
+            "false_alert_episodes": 0,
+            "false_episode_rate": null,
+            "lead_seconds": [],
+            "lead_median": null
+          },
+          "cases": [
+            {
+              "kind": "synthetic_precursor",
+              "name": "가상 전조 패턴",
+              "event": 116,
+              "seed": 200294,
+              "summary": {
+                "max_score": 0.9368,
+                "alert_rows": 0,
+                "positive_window_hits": 0,
+                "false_alert_rows": 0,
+                "lead_seconds": null
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

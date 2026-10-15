@@ -4,6 +4,43 @@ from prepare_showcase import episode
 from device_server import DeviceProcessor, RAW_FEATURES
 
 class ShowcaseTests(unittest.TestCase):
+    def test_seed_repeatability_and_variation(self):
+        a=list(episode(200004,'synthetic_precursor'))
+        self.assertEqual(a,list(episode(200004,'synthetic_precursor')))
+        self.assertNotEqual(a,list(episode(200014,'synthetic_precursor')))
+
+    def test_counter_baseline_cannot_change_model_inputs(self):
+        inputs=[]
+        for baseline in (0,1000,1000000):
+            p=DeviceProcessor();rows=[]
+            for f,event in episode(200004,'synthetic_precursor',initial_count=baseline):
+                r=p.process(f)
+                if r.get('model_input') is not None:rows.append(r['model_input'])
+            inputs.append(rows)
+        np.testing.assert_array_equal(inputs[0],inputs[1])
+        np.testing.assert_array_equal(inputs[1],inputs[2])
+
+    def test_event_metric_does_not_count_early_or_post_event_alerts(self):
+        from seed_evaluation import summarize
+        cases=[{'event':100,'records':[
+            {'time':80,'score':.99,'label':0},
+            {'time':95,'score':.1,'label':1},
+            {'time':100,'score':.99,'label':0}]}]
+        m=summarize(cases,.9)
+        self.assertEqual((m['event_hits'],m['event_misses'],m['fp'],m['fn']),(0,1,2,1))
+        cases[0]['records'][1]['score']=.99
+        m=summarize(cases,.9)
+        self.assertEqual(m['event_hits'],1);self.assertEqual(m['lead_seconds'],[5])
+
+    def test_false_episode_and_window_metrics_have_different_denominators(self):
+        from seed_evaluation import summarize
+        cases=[{'event':None,'records':[{'score':.99,'label':0},{'score':.99,'label':0}]},
+               {'event':None,'records':[{'score':.1,'label':0},{'score':None,'label':0}]}]
+        m=summarize(cases,.9)
+        self.assertEqual(m['false_alert_episodes'],1)
+        self.assertEqual(m['false_episode_rate'],.5)
+        self.assertEqual(m['window_fpr'],2/3)
+        self.assertIsNone(m['event_recall'])
     def test_precursor_event_count_is_not_available_early(self):
         frames=list(episode(23,'synthetic_precursor'))
         event=frames[0][1]
@@ -53,5 +90,6 @@ class ShowcaseTests(unittest.TestCase):
         batch=np.asarray(windows)*model.scale+model.offset
         expected=np.round(model.model(batch,training=False).numpy().ravel().astype(float),4)
         np.testing.assert_allclose(scores,expected,atol=.0001001,rtol=0)
+        np.testing.assert_allclose(model.predict_many(windows),expected,atol=.0001001,rtol=0)
 
 if __name__=='__main__':unittest.main()

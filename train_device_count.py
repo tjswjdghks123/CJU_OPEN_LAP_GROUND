@@ -41,6 +41,21 @@ class CountPredictor:
                 "model_training_origin": self.manifest["data_origin"], "score_is_calibrated_probability": False,
                 "forecast_seconds": 10, "automatic_control_allowed": False}
 
+    def predict_many(self, rows, batch_size=128):
+        """Frozen-model offline inference; same scaler and rounding as streaming."""
+        rows = np.asarray(rows, dtype=np.float32)
+        if rows.ndim != 3 or rows.shape[1:] != (30, 10) or not np.isfinite(rows).all():
+            raise ValueError('Expected finite windows of shape (N, 30, 10)')
+        if batch_size < 1: raise ValueError('batch_size must be positive')
+        scores = []
+        for at in range(0, len(rows), batch_size):
+            x = rows[at:at+batch_size] * self.scale + self.offset
+            scores.extend(self.model(x, training=False).numpy().ravel().tolist())
+        scores = np.round(np.asarray(scores, dtype=float), 4)
+        if not np.isfinite(scores).all() or np.any((scores < 0) | (scores > 1)):
+            raise ValueError('Invalid model scores')
+        return scores
+
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
