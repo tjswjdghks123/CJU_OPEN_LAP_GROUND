@@ -70,3 +70,7 @@ python train_device_count.py --frames showcase_training_data/frames.jsonl --even
 ![난수 반복 평가](docs/seed_evaluation.png)
 
 [시드별 평가 결과](docs/seed_evaluation.json)
+
+## 실습 시연 발표 대본
+
+[그대로 읽는 최종 발표 대본](docs/실습시연_최종발표대본.txt)에 화면 조작 순서, 10개 입력, 최근 30개 시점, 점수와 경보의 차이, 난수 평가 그래프 네 개, 약한 패턴의 실패와 예상 질문을 정리했습니다. 실제 장비 연결 및 실제 낙뢰 예측 성능은 검증 전입니다.
