@@ -5,6 +5,7 @@ from datetime import datetime
 import json
 from pathlib import Path
 import webbrowser
+import shutil
 import numpy as np
 from device_server import DeviceProcessor, RAW_FEATURES
 from prepare_showcase import episode
@@ -34,10 +35,13 @@ def run_cases(predictor, seed_base=91000, pattern_scale=1., noise_scale=1., kind
         for at,score in zip(anchors,predictor.predict_many(np.asarray(windows))):
             records[at]['score']=float(score)
             records[at]['alert']=bool(score>=predictor.manifest['threshold'])
+        from simulated_protection import replay
+        protection=replay(records,predictor.manifest['threshold'])
+        for row,state in zip(records,protection['states']): row['protection_state']=state
         valid=[r for r in records if r['score'] is not None]
         warnings=[r['time'] for r in valid if r['alert']]
         before=[r['time'] for r in valid if r['alert'] and r['label']==1]
-        results.append({'kind':kind,'name':label,'event':event,'seed':seed_base+j,'records':records,
+        results.append({'kind':kind,'name':label,'event':event,'seed':seed_base+j,'records':records,'protection':protection,
             'summary':{'max_score':max(r['score'] for r in valid),'alert_rows':len(warnings),
                 'positive_window_hits':sum(r['alert'] and r['label']==1 for r in valid),
                 'false_alert_rows':sum(r['alert'] and r['label']==0 for r in valid),
@@ -91,9 +95,20 @@ def main():
         w=csv.writer(f);w.writerow(['case','time_s',*RAW_FEATURES,'score','alert','invented_label_next_10s'])
         for c in cases:
             for r in c['records']:w.writerow([c['kind'],r['time'],*r['values'],r['score'],r['alert'],r['label']])
+    from simulated_protection import fault_examples
+    faults=fault_examples(predictor.manifest['threshold'])
+    (out/'protection_log.json').write_text(json.dumps({'simulation_only':True,'hardware_commands_sent':0,
+        'original':[{'case':c['kind'],**c['protection']} for c in cases],
+        'conditions':{p['id']:[{'seed':c['seed'],'case':c['kind'],**c['protection']} for t in p['trials'] for c in t['cases']] for p in bank['profiles']},
+        'controller_fixtures':faults},ensure_ascii=False,indent=2),encoding='utf-8')
     plots(out,cases,predictor.manifest);report(out,bank)
-    data={'cases':encode_cases(cases),'labels':LABELS,'threshold':predictor.manifest['threshold'],'bank':payload(bank)}
-    template=(ROOT/'showcase_dashboard.html').read_text(encoding='utf-8')
+    data={'cases':encode_cases(cases),'labels':LABELS,'threshold':predictor.manifest['threshold'],'bank':payload(bank),'controller_fixtures':faults}
+    external=ROOT/'external_evaluation_report'
+    external_link='<p>외부 실측 평가 자료가 설치되지 않았습니다.</p>'
+    if (external/'index.html').is_file():
+        shutil.copytree(external,out/'external_evaluation_report')
+        external_link='<p><a href="external_evaluation_report/index.html">외부 실측 평가 열기 — 실제 관측 결과·성공과 실패 사례</a></p>'
+    template=(ROOT/'showcase_dashboard.html').read_text(encoding='utf-8').replace('__EXTERNAL_REPORT_LINK__',external_link)
     (out/'dashboard.html').write_text(template.replace('__PAYLOAD__',json.dumps(data,ensure_ascii=False,allow_nan=False)),encoding='utf-8')
     for c in cases: print(json.dumps({'case':c['kind'],**c['summary']}),flush=True)
     for p in bank['profiles']:print(json.dumps({'evaluation_profile':p['id'],**p['metrics']}),flush=True)

@@ -1,0 +1,36 @@
+{
+  "synthetic_only": true,
+  "real_lightning_validated": false,
+  "splits": {
+    "train": [
+      410000,
+      24
+    ],
+    "validation": [
+      510000,
+      10
+    ],
+    "test": [
+      610000,
+      30
+    ]
+  },
+  "kinds": [
+    "normal",
+    "thermal_only",
+    "leakage_only",
+    "voltage_step",
+    "spike",
+    "recovery",
+    "standard",
+    "weak",
+    "slow"
+  ],
+  "epochs_max": 20,
+  "selection": "validation F1 maximum subject to window FPR <= 1%; rounded to 4 decimals",
+  "checkpoint": "lowest validation loss; patience 5",
+  "test_used_for_selection": false,
+  "negative_ambiguity": "recovery can share an initial rise with positive episodes; do not promise perfect discrimination",
+  "old_model_sha256": "55fbe69ed28d68e4fa9dd67cd96c3235d5601a00e320e0db72b8ad264288fa09",
+  "script_sha256": "a8c41c44ddbf1daff85fcc713f2af7f4a3a2df014bf9bb3e2b16691252d78e71"
+}

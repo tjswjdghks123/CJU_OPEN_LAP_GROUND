@@ -5,7 +5,9 @@ import numpy as np
 
 PROFILES = [
     {'id':'standard','name':'기존 합성 규칙 · 난수 변화','pattern_scale':1.,'noise_scale':1.,'kinds':None},
-    {'id':'weak','name':'약한 가상 전조 · 잡음 증가','pattern_scale':.6,'noise_scale':2.,'kinds':['synthetic_precursor']},
+    {'id':'weak_only','name':'약한 신호만 · 잡음 동일','pattern_scale':.6,'noise_scale':1.,'kinds':None},
+    {'id':'noise_only','name':'잡음만 2배 · 신호 동일','pattern_scale':1.,'noise_scale':2.,'kinds':None},
+    {'id':'weak','name':'약한 가상 전조 · 잡음 증가','pattern_scale':.6,'noise_scale':2.,'kinds':None},
 ]
 
 def summarize(cases, threshold):
@@ -66,7 +68,7 @@ def report(out,bank):
     import matplotlib.pyplot as plt
     plt.rcParams['font.family']='Malgun Gothic';plt.rcParams['axes.unicode_minus']=False
     fig,axes=plt.subplots(2,2,figsize=(12,8),layout='constrained')
-    colors=['#216ac3','#b75216']
+    colors=['#216ac3','#6d53aa','#1c8c71','#b75216']
     for p,color in zip(bank['profiles'],colors):
         for t in p['trials']:
             c=next(c for c in t['cases'] if c['event'] is not None)
@@ -77,19 +79,14 @@ def report(out,bank):
     axes[0,0].axvspan(-10,0,color='orange',alpha=.15);axes[0,0].axvline(0,color='red',ls=':')
     axes[0,0].set(xlim=(-45,15),ylim=(-.02,1.05),xlabel='가상 사건 기준 시간 (초)',ylabel='시험 점수',title='새 난수별 점수 곡선')
     axes[0,0].legend(fontsize=8)
-    names=['기존 합성 규칙','약한 패턴·잡음 2배']
+    names=['기본','신호 60%','잡음 2배','신호 60%·잡음 2배']
     hits=[p['metrics']['event_hits'] for p in bank['profiles']];misses=[p['metrics']['event_misses'] for p in bank['profiles']]
     axes[0,1].bar(names,hits,label='직전 10초 안 경보',color='#216ac3')
     axes[0,1].bar(names,misses,bottom=hits,label='놓친 가상 사건',color='#df8968')
     for i,(h,m) in enumerate(zip(hits,misses)):axes[0,1].text(i,h+m+.3,f'{h}/{h+m} 감지',ha='center')
     axes[0,1].set(ylim=(0,bank['seed_count']*1.2),ylabel='가상 사건 수',title='가상 사건 감지와 누락');axes[0,1].legend(fontsize=8)
-    standard=bank['profiles'][0]
-    negatives=[c for t in standard['trials'] for c in t['cases'] if c['event'] is None]
-    kinds=list(dict.fromkeys(c['kind'] for c in negatives)); labels=[];rates=[]
-    for kind in kinds:
-        group=[c for c in negatives if c['kind']==kind];labels.append(group[0]['name'])
-        rates.append(100*sum(c['summary']['alert_rows']>0 for c in group)/len(group))
-    axes[1,0].bar(labels,rates,color='#7694ad');axes[1,0].set(ylim=(0,105),ylabel='사건 없는 사례 중 경보 비율 (%)',title='기존 합성 규칙의 사례별 오경보')
+    rates=[100*p['metrics']['false_episode_rate'] for p in bank['profiles']]
+    axes[1,0].bar(names,rates,color=colors);axes[1,0].set(ylim=(0,105),ylabel='사건 없는 사례 중 경보 비율 (%)',title='네 조건의 사건 없는 비교 사례 오경보')
     for i,v in enumerate(rates):axes[1,0].text(i,v+2,f'{v:.1f}%',ha='center')
     for p,color,name in zip(bank['profiles'],colors,names):
         leads=p['metrics']['lead_seconds'];axes[1,1].hist(leads,bins=np.arange(.5,11.5,1),alpha=.6,color=color,label=f'{name} ({len(leads)}건)')
@@ -101,7 +98,7 @@ def report(out,bank):
 def encode_cases(cases):
     # Compact payload: evaluation histories are replayed locally without a server.
     return [{k:v for k,v in c.items() if k!='records'}|{'records':[
-        [r['time'],r['values'],r['score'],int(r['alert']),int(r['criterion']),r['equipment'],r['new_count'],r['label']]
+        [r['time'],r['values'],r['score'],int(r['alert']),int(r['criterion']),r['equipment'],r['new_count'],r['label'],r['protection_state']]
         for r in c['records']]} for c in cases]
 
 def payload(bank):

@@ -1,0 +1,7596 @@
+{
+  "policy": {
+    "synthetic_only": true,
+    "real_lightning_validated": false,
+    "splits": {
+      "train": [
+        410000,
+        24
+      ],
+      "validation": [
+        510000,
+        10
+      ],
+      "test": [
+        610000,
+        30
+      ]
+    },
+    "kinds": [
+      "normal",
+      "thermal_only",
+      "leakage_only",
+      "voltage_step",
+      "spike",
+      "recovery",
+      "standard",
+      "weak",
+      "slow"
+    ],
+    "epochs_max": 20,
+    "selection": "validation F1 maximum subject to window FPR <= 1%; rounded to 4 decimals",
+    "checkpoint": "lowest validation loss; patience 5",
+    "test_used_for_selection": false,
+    "negative_ambiguity": "recovery can share an initial rise with positive episodes; do not promise perfect discrimination",
+    "old_model_sha256": "55fbe69ed28d68e4fa9dd67cd96c3235d5601a00e320e0db72b8ad264288fa09",
+    "script_sha256": "a8c41c44ddbf1daff85fcc713f2af7f4a3a2df014bf9bb3e2b16691252d78e71",
+    "old_rethresholded_selection": "new validation only; weights unchanged"
+  },
+  "old": {
+    "threshold": 0.9744,
+    "windows": {
+      "tp": 298,
+      "fn": 602,
+      "fp": 234,
+      "tn": 39366,
+      "recall": 0.33111111111111113,
+      "precision": 0.5601503759398496,
+      "false_positive_rate": 0.005909090909090909,
+      "f1": 0.41620111731843573
+    },
+    "by_kind": {
+      "normal": {
+        "cases": 30,
+        "events": 0,
+        "hits": 0,
+        "misses": 0,
+        "false_alert_cases": 0,
+        "median_lead": null
+      },
+      "thermal_only": {
+        "cases": 30,
+        "events": 0,
+        "hits": 0,
+        "misses": 0,
+        "false_alert_cases": 0,
+        "median_lead": null
+      },
+      "leakage_only": {
+        "cases": 30,
+        "events": 0,
+        "hits": 0,
+        "misses": 0,
+        "false_alert_cases": 0,
+        "median_lead": null
+      },
+      "voltage_step": {
+        "cases": 30,
+        "events": 0,
+        "hits": 0,
+        "misses": 0,
+        "false_alert_cases": 0,
+        "median_lead": null
+      },
+      "spike": {
+        "cases": 30,
+        "events": 0,
+        "hits": 0,
+        "misses": 0,
+        "false_alert_cases": 0,
+        "median_lead": null
+      },
+      "recovery": {
+        "cases": 30,
+        "events": 0,
+        "hits": 0,
+        "misses": 0,
+        "false_alert_cases": 25,
+        "median_lead": null
+      },
+      "standard": {
+        "cases": 30,
+        "events": 30,
+        "hits": 30,
+        "misses": 0,
+        "false_alert_cases": null,
+        "median_lead": 10.0
+      },
+      "weak": {
+        "cases": 30,
+        "events": 30,
+        "hits": 2,
+        "misses": 28,
+        "false_alert_cases": null,
+        "median_lead": 2.0
+      },
+      "slow": {
+        "cases": 30,
+        "events": 30,
+        "hits": 2,
+        "misses": 28,
+        "false_alert_cases": null,
+        "median_lead": 6.0
+      }
+    },
+    "cases": [
+      {
+        "seed": 610000,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610001,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610002,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610003,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610004,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610005,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 2,
+        "false_windows": 2
+      },
+      {
+        "seed": 610006,
+        "kind": "standard",
+        "event": 139,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 12,
+        "false_windows": 2
+      },
+      {
+        "seed": 610007,
+        "kind": "weak",
+        "event": 119,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610008,
+        "kind": "slow",
+        "event": 135,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610020,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610021,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610022,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610023,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610024,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610025,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 8,
+        "false_windows": 8
+      },
+      {
+        "seed": 610026,
+        "kind": "standard",
+        "event": 126,
+        "hit": true,
+        "lead": 9,
+        "alert_windows": 9,
+        "false_windows": 0
+      },
+      {
+        "seed": 610027,
+        "kind": "weak",
+        "event": 125,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610028,
+        "kind": "slow",
+        "event": 125,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610040,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610041,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610042,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610043,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610044,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610045,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 12,
+        "false_windows": 12
+      },
+      {
+        "seed": 610046,
+        "kind": "standard",
+        "event": 121,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 11,
+        "false_windows": 1
+      },
+      {
+        "seed": 610047,
+        "kind": "weak",
+        "event": 126,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610048,
+        "kind": "slow",
+        "event": 125,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 8,
+        "false_windows": 8
+      },
+      {
+        "seed": 610060,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610061,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610062,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610063,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610064,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610065,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610066,
+        "kind": "standard",
+        "event": 130,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610067,
+        "kind": "weak",
+        "event": 122,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610068,
+        "kind": "slow",
+        "event": 116,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610080,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610081,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610082,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610083,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610084,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610085,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 8,
+        "false_windows": 8
+      },
+      {
+        "seed": 610086,
+        "kind": "standard",
+        "event": 137,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610087,
+        "kind": "weak",
+        "event": 134,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610088,
+        "kind": "slow",
+        "event": 117,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610100,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610101,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610102,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610103,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610104,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610105,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 6,
+        "false_windows": 6
+      },
+      {
+        "seed": 610106,
+        "kind": "standard",
+        "event": 124,
+        "hit": true,
+        "lead": 9,
+        "alert_windows": 9,
+        "false_windows": 0
+      },
+      {
+        "seed": 610107,
+        "kind": "weak",
+        "event": 120,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610108,
+        "kind": "slow",
+        "event": 116,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610120,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610121,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610122,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610123,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610124,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610125,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610126,
+        "kind": "standard",
+        "event": 124,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610127,
+        "kind": "weak",
+        "event": 121,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610128,
+        "kind": "slow",
+        "event": 136,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610140,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610141,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610142,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610143,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610144,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610145,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 7,
+        "false_windows": 7
+      },
+      {
+        "seed": 610146,
+        "kind": "standard",
+        "event": 123,
+        "hit": true,
+        "lead": 8,
+        "alert_windows": 8,
+        "false_windows": 0
+      },
+      {
+        "seed": 610147,
+        "kind": "weak",
+        "event": 136,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610148,
+        "kind": "slow",
+        "event": 116,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610160,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610161,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610162,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610163,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610164,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610165,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 3,
+        "false_windows": 3
+      },
+      {
+        "seed": 610166,
+        "kind": "standard",
+        "event": 123,
+        "hit": true,
+        "lead": 9,
+        "alert_windows": 9,
+        "false_windows": 0
+      },
+      {
+        "seed": 610167,
+        "kind": "weak",
+        "event": 126,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610168,
+        "kind": "slow",
+        "event": 134,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610180,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610181,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610182,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610183,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610184,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610185,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 6,
+        "false_windows": 6
+      },
+      {
+        "seed": 610186,
+        "kind": "standard",
+        "event": 116,
+        "hit": true,
+        "lead": 9,
+        "alert_windows": 9,
+        "false_windows": 0
+      },
+      {
+        "seed": 610187,
+        "kind": "weak",
+        "event": 133,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610188,
+        "kind": "slow",
+        "event": 117,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 11,
+        "false_windows": 8
+      },
+      {
+        "seed": 610200,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610201,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610202,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610203,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610204,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610205,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 3,
+        "false_windows": 3
+      },
+      {
+        "seed": 610206,
+        "kind": "standard",
+        "event": 133,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 11,
+        "false_windows": 1
+      },
+      {
+        "seed": 610207,
+        "kind": "weak",
+        "event": 126,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610208,
+        "kind": "slow",
+        "event": 129,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610220,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610221,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610222,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610223,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610224,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610225,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 5,
+        "false_windows": 5
+      },
+      {
+        "seed": 610226,
+        "kind": "standard",
+        "event": 117,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610227,
+        "kind": "weak",
+        "event": 125,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610228,
+        "kind": "slow",
+        "event": 117,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610240,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610241,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610242,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610243,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610244,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610245,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 8,
+        "false_windows": 8
+      },
+      {
+        "seed": 610246,
+        "kind": "standard",
+        "event": 136,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610247,
+        "kind": "weak",
+        "event": 122,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610248,
+        "kind": "slow",
+        "event": 119,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610260,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610261,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610262,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610263,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610264,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610265,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610266,
+        "kind": "standard",
+        "event": 128,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610267,
+        "kind": "weak",
+        "event": 136,
+        "hit": true,
+        "lead": 1,
+        "alert_windows": 1,
+        "false_windows": 0
+      },
+      {
+        "seed": 610268,
+        "kind": "slow",
+        "event": 116,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610280,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610281,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610282,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610283,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610284,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610285,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 9,
+        "false_windows": 9
+      },
+      {
+        "seed": 610286,
+        "kind": "standard",
+        "event": 139,
+        "hit": true,
+        "lead": 9,
+        "alert_windows": 9,
+        "false_windows": 0
+      },
+      {
+        "seed": 610287,
+        "kind": "weak",
+        "event": 132,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610288,
+        "kind": "slow",
+        "event": 124,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610300,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610301,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610302,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610303,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610304,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610305,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610306,
+        "kind": "standard",
+        "event": 136,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610307,
+        "kind": "weak",
+        "event": 133,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610308,
+        "kind": "slow",
+        "event": 116,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610320,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610321,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610322,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610323,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610324,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610325,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 7,
+        "false_windows": 7
+      },
+      {
+        "seed": 610326,
+        "kind": "standard",
+        "event": 115,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610327,
+        "kind": "weak",
+        "event": 138,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610328,
+        "kind": "slow",
+        "event": 127,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610340,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610341,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610342,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610343,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610344,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610345,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 12,
+        "false_windows": 12
+      },
+      {
+        "seed": 610346,
+        "kind": "standard",
+        "event": 118,
+        "hit": true,
+        "lead": 9,
+        "alert_windows": 9,
+        "false_windows": 0
+      },
+      {
+        "seed": 610347,
+        "kind": "weak",
+        "event": 121,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610348,
+        "kind": "slow",
+        "event": 120,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610360,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610361,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610362,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610363,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610364,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610365,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 10,
+        "false_windows": 10
+      },
+      {
+        "seed": 610366,
+        "kind": "standard",
+        "event": 131,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 11,
+        "false_windows": 1
+      },
+      {
+        "seed": 610367,
+        "kind": "weak",
+        "event": 126,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610368,
+        "kind": "slow",
+        "event": 134,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610380,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610381,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610382,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610383,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610384,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610385,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 10,
+        "false_windows": 10
+      },
+      {
+        "seed": 610386,
+        "kind": "standard",
+        "event": 116,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610387,
+        "kind": "weak",
+        "event": 129,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610388,
+        "kind": "slow",
+        "event": 135,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 4,
+        "false_windows": 4
+      },
+      {
+        "seed": 610400,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610401,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610402,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610403,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610404,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610405,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 13,
+        "false_windows": 13
+      },
+      {
+        "seed": 610406,
+        "kind": "standard",
+        "event": 127,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610407,
+        "kind": "weak",
+        "event": 139,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610408,
+        "kind": "slow",
+        "event": 133,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610420,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610421,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610422,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610423,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610424,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610425,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 9,
+        "false_windows": 9
+      },
+      {
+        "seed": 610426,
+        "kind": "standard",
+        "event": 117,
+        "hit": true,
+        "lead": 9,
+        "alert_windows": 9,
+        "false_windows": 0
+      },
+      {
+        "seed": 610427,
+        "kind": "weak",
+        "event": 120,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610428,
+        "kind": "slow",
+        "event": 139,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610440,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610441,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610442,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610443,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610444,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610445,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 7,
+        "false_windows": 7
+      },
+      {
+        "seed": 610446,
+        "kind": "standard",
+        "event": 135,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610447,
+        "kind": "weak",
+        "event": 139,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610448,
+        "kind": "slow",
+        "event": 131,
+        "hit": true,
+        "lead": 2,
+        "alert_windows": 2,
+        "false_windows": 0
+      },
+      {
+        "seed": 610460,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610461,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610462,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610463,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610464,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610465,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 12,
+        "false_windows": 12
+      },
+      {
+        "seed": 610466,
+        "kind": "standard",
+        "event": 129,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610467,
+        "kind": "weak",
+        "event": 125,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610468,
+        "kind": "slow",
+        "event": 115,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610480,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610481,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610482,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610483,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610484,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610485,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 10,
+        "false_windows": 10
+      },
+      {
+        "seed": 610486,
+        "kind": "standard",
+        "event": 123,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 11,
+        "false_windows": 1
+      },
+      {
+        "seed": 610487,
+        "kind": "weak",
+        "event": 129,
+        "hit": true,
+        "lead": 3,
+        "alert_windows": 3,
+        "false_windows": 0
+      },
+      {
+        "seed": 610488,
+        "kind": "slow",
+        "event": 131,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610500,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610501,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610502,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610503,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610504,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610505,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 6,
+        "false_windows": 6
+      },
+      {
+        "seed": 610506,
+        "kind": "standard",
+        "event": 117,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610507,
+        "kind": "weak",
+        "event": 118,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610508,
+        "kind": "slow",
+        "event": 121,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 6,
+        "false_windows": 6
+      },
+      {
+        "seed": 610520,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610521,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610522,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610523,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610524,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610525,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610526,
+        "kind": "standard",
+        "event": 130,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 11,
+        "false_windows": 1
+      },
+      {
+        "seed": 610527,
+        "kind": "weak",
+        "event": 139,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610528,
+        "kind": "slow",
+        "event": 132,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610540,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610541,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610542,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610543,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610544,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610545,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 10,
+        "false_windows": 10
+      },
+      {
+        "seed": 610546,
+        "kind": "standard",
+        "event": 132,
+        "hit": true,
+        "lead": 8,
+        "alert_windows": 8,
+        "false_windows": 0
+      },
+      {
+        "seed": 610547,
+        "kind": "weak",
+        "event": 119,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610548,
+        "kind": "slow",
+        "event": 128,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610560,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610561,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610562,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610563,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610564,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610565,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 11,
+        "false_windows": 11
+      },
+      {
+        "seed": 610566,
+        "kind": "standard",
+        "event": 126,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610567,
+        "kind": "weak",
+        "event": 129,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610568,
+        "kind": "slow",
+        "event": 129,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610580,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610581,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610582,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610583,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610584,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610585,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 7,
+        "false_windows": 7
+      },
+      {
+        "seed": 610586,
+        "kind": "standard",
+        "event": 120,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610587,
+        "kind": "weak",
+        "event": 133,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610588,
+        "kind": "slow",
+        "event": 133,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      }
+    ]
+  },
+  "new": {
+    "threshold": 0.5482,
+    "windows": {
+      "tp": 775,
+      "fn": 125,
+      "fp": 460,
+      "tn": 39140,
+      "recall": 0.8611111111111112,
+      "precision": 0.6275303643724697,
+      "false_positive_rate": 0.011616161616161616,
+      "f1": 0.7259953161592506
+    },
+    "by_kind": {
+      "normal": {
+        "cases": 30,
+        "events": 0,
+        "hits": 0,
+        "misses": 0,
+        "false_alert_cases": 0,
+        "median_lead": null
+      },
+      "thermal_only": {
+        "cases": 30,
+        "events": 0,
+        "hits": 0,
+        "misses": 0,
+        "false_alert_cases": 0,
+        "median_lead": null
+      },
+      "leakage_only": {
+        "cases": 30,
+        "events": 0,
+        "hits": 0,
+        "misses": 0,
+        "false_alert_cases": 0,
+        "median_lead": null
+      },
+      "voltage_step": {
+        "cases": 30,
+        "events": 0,
+        "hits": 0,
+        "misses": 0,
+        "false_alert_cases": 0,
+        "median_lead": null
+      },
+      "spike": {
+        "cases": 30,
+        "events": 0,
+        "hits": 0,
+        "misses": 0,
+        "false_alert_cases": 0,
+        "median_lead": null
+      },
+      "recovery": {
+        "cases": 30,
+        "events": 0,
+        "hits": 0,
+        "misses": 0,
+        "false_alert_cases": 1,
+        "median_lead": null
+      },
+      "standard": {
+        "cases": 30,
+        "events": 30,
+        "hits": 30,
+        "misses": 0,
+        "false_alert_cases": null,
+        "median_lead": 10.0
+      },
+      "weak": {
+        "cases": 30,
+        "events": 30,
+        "hits": 29,
+        "misses": 1,
+        "false_alert_cases": null,
+        "median_lead": 9.0
+      },
+      "slow": {
+        "cases": 30,
+        "events": 30,
+        "hits": 30,
+        "misses": 0,
+        "false_alert_cases": null,
+        "median_lead": 10.0
+      }
+    },
+    "cases": [
+      {
+        "seed": 610000,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610001,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610002,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610003,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610004,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610005,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610006,
+        "kind": "standard",
+        "event": 139,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610007,
+        "kind": "weak",
+        "event": 119,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 13,
+        "false_windows": 7
+      },
+      {
+        "seed": 610008,
+        "kind": "slow",
+        "event": 135,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 25,
+        "false_windows": 15
+      },
+      {
+        "seed": 610020,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610021,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610022,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610023,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610024,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610025,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610026,
+        "kind": "standard",
+        "event": 126,
+        "hit": true,
+        "lead": 9,
+        "alert_windows": 9,
+        "false_windows": 0
+      },
+      {
+        "seed": 610027,
+        "kind": "weak",
+        "event": 125,
+        "hit": true,
+        "lead": 7,
+        "alert_windows": 7,
+        "false_windows": 0
+      },
+      {
+        "seed": 610028,
+        "kind": "slow",
+        "event": 125,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 29,
+        "false_windows": 19
+      },
+      {
+        "seed": 610040,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610041,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610042,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610043,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610044,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610045,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610046,
+        "kind": "standard",
+        "event": 121,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610047,
+        "kind": "weak",
+        "event": 126,
+        "hit": true,
+        "lead": 3,
+        "alert_windows": 3,
+        "false_windows": 0
+      },
+      {
+        "seed": 610048,
+        "kind": "slow",
+        "event": 125,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 27,
+        "false_windows": 17
+      },
+      {
+        "seed": 610060,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610061,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610062,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610063,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610064,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610065,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610066,
+        "kind": "standard",
+        "event": 130,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 11,
+        "false_windows": 1
+      },
+      {
+        "seed": 610067,
+        "kind": "weak",
+        "event": 122,
+        "hit": true,
+        "lead": 4,
+        "alert_windows": 4,
+        "false_windows": 0
+      },
+      {
+        "seed": 610068,
+        "kind": "slow",
+        "event": 116,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 23,
+        "false_windows": 13
+      },
+      {
+        "seed": 610080,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610081,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610082,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610083,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610084,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610085,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610086,
+        "kind": "standard",
+        "event": 137,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610087,
+        "kind": "weak",
+        "event": 134,
+        "hit": true,
+        "lead": 6,
+        "alert_windows": 6,
+        "false_windows": 0
+      },
+      {
+        "seed": 610088,
+        "kind": "slow",
+        "event": 117,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 23,
+        "false_windows": 13
+      },
+      {
+        "seed": 610100,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610101,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610102,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610103,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610104,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610105,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610106,
+        "kind": "standard",
+        "event": 124,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 11,
+        "false_windows": 1
+      },
+      {
+        "seed": 610107,
+        "kind": "weak",
+        "event": 120,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 1
+      },
+      {
+        "seed": 610108,
+        "kind": "slow",
+        "event": 116,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 21,
+        "false_windows": 11
+      },
+      {
+        "seed": 610120,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610121,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610122,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610123,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610124,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610125,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610126,
+        "kind": "standard",
+        "event": 124,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610127,
+        "kind": "weak",
+        "event": 121,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 6,
+        "false_windows": 1
+      },
+      {
+        "seed": 610128,
+        "kind": "slow",
+        "event": 136,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610140,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610141,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610142,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610143,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610144,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610145,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610146,
+        "kind": "standard",
+        "event": 123,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 12,
+        "false_windows": 2
+      },
+      {
+        "seed": 610147,
+        "kind": "weak",
+        "event": 136,
+        "hit": true,
+        "lead": 9,
+        "alert_windows": 9,
+        "false_windows": 0
+      },
+      {
+        "seed": 610148,
+        "kind": "slow",
+        "event": 116,
+        "hit": true,
+        "lead": 3,
+        "alert_windows": 14,
+        "false_windows": 11
+      },
+      {
+        "seed": 610160,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610161,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610162,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610163,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610164,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610165,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610166,
+        "kind": "standard",
+        "event": 123,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610167,
+        "kind": "weak",
+        "event": 126,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610168,
+        "kind": "slow",
+        "event": 134,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 21,
+        "false_windows": 11
+      },
+      {
+        "seed": 610180,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610181,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610182,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610183,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610184,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610185,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 2,
+        "false_windows": 2
+      },
+      {
+        "seed": 610186,
+        "kind": "standard",
+        "event": 116,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 11,
+        "false_windows": 1
+      },
+      {
+        "seed": 610187,
+        "kind": "weak",
+        "event": 133,
+        "hit": true,
+        "lead": 4,
+        "alert_windows": 4,
+        "false_windows": 0
+      },
+      {
+        "seed": 610188,
+        "kind": "slow",
+        "event": 117,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 24,
+        "false_windows": 14
+      },
+      {
+        "seed": 610200,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610201,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610202,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610203,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610204,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610205,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610206,
+        "kind": "standard",
+        "event": 133,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610207,
+        "kind": "weak",
+        "event": 126,
+        "hit": true,
+        "lead": 5,
+        "alert_windows": 5,
+        "false_windows": 0
+      },
+      {
+        "seed": 610208,
+        "kind": "slow",
+        "event": 129,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 26,
+        "false_windows": 16
+      },
+      {
+        "seed": 610220,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610221,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610222,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610223,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610224,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610225,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610226,
+        "kind": "standard",
+        "event": 117,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610227,
+        "kind": "weak",
+        "event": 125,
+        "hit": true,
+        "lead": 4,
+        "alert_windows": 4,
+        "false_windows": 0
+      },
+      {
+        "seed": 610228,
+        "kind": "slow",
+        "event": 117,
+        "hit": true,
+        "lead": 6,
+        "alert_windows": 17,
+        "false_windows": 11
+      },
+      {
+        "seed": 610240,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610241,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610242,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610243,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610244,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610245,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610246,
+        "kind": "standard",
+        "event": 136,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 11,
+        "false_windows": 1
+      },
+      {
+        "seed": 610247,
+        "kind": "weak",
+        "event": 122,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 12,
+        "false_windows": 2
+      },
+      {
+        "seed": 610248,
+        "kind": "slow",
+        "event": 119,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 23,
+        "false_windows": 13
+      },
+      {
+        "seed": 610260,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610261,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610262,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610263,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610264,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610265,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610266,
+        "kind": "standard",
+        "event": 128,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 11,
+        "false_windows": 1
+      },
+      {
+        "seed": 610267,
+        "kind": "weak",
+        "event": 136,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610268,
+        "kind": "slow",
+        "event": 116,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 31,
+        "false_windows": 21
+      },
+      {
+        "seed": 610280,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610281,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610282,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610283,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610284,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610285,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610286,
+        "kind": "standard",
+        "event": 139,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610287,
+        "kind": "weak",
+        "event": 132,
+        "hit": true,
+        "lead": 7,
+        "alert_windows": 7,
+        "false_windows": 0
+      },
+      {
+        "seed": 610288,
+        "kind": "slow",
+        "event": 124,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 25,
+        "false_windows": 15
+      },
+      {
+        "seed": 610300,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610301,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610302,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610303,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610304,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610305,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610306,
+        "kind": "standard",
+        "event": 136,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610307,
+        "kind": "weak",
+        "event": 133,
+        "hit": true,
+        "lead": 9,
+        "alert_windows": 1,
+        "false_windows": 0
+      },
+      {
+        "seed": 610308,
+        "kind": "slow",
+        "event": 116,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 24,
+        "false_windows": 14
+      },
+      {
+        "seed": 610320,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610321,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610322,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610323,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610324,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610325,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610326,
+        "kind": "standard",
+        "event": 115,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610327,
+        "kind": "weak",
+        "event": 138,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 11,
+        "false_windows": 4
+      },
+      {
+        "seed": 610328,
+        "kind": "slow",
+        "event": 127,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 24,
+        "false_windows": 14
+      },
+      {
+        "seed": 610340,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610341,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610342,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610343,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610344,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610345,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610346,
+        "kind": "standard",
+        "event": 118,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610347,
+        "kind": "weak",
+        "event": 121,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 11,
+        "false_windows": 1
+      },
+      {
+        "seed": 610348,
+        "kind": "slow",
+        "event": 120,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 31,
+        "false_windows": 21
+      },
+      {
+        "seed": 610360,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610361,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610362,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610363,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610364,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610365,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610366,
+        "kind": "standard",
+        "event": 131,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610367,
+        "kind": "weak",
+        "event": 126,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 14,
+        "false_windows": 4
+      },
+      {
+        "seed": 610368,
+        "kind": "slow",
+        "event": 134,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 27,
+        "false_windows": 17
+      },
+      {
+        "seed": 610380,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610381,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610382,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610383,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610384,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610385,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610386,
+        "kind": "standard",
+        "event": 116,
+        "hit": true,
+        "lead": 9,
+        "alert_windows": 9,
+        "false_windows": 0
+      },
+      {
+        "seed": 610387,
+        "kind": "weak",
+        "event": 129,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 11,
+        "false_windows": 1
+      },
+      {
+        "seed": 610388,
+        "kind": "slow",
+        "event": 135,
+        "hit": true,
+        "lead": 8,
+        "alert_windows": 21,
+        "false_windows": 13
+      },
+      {
+        "seed": 610400,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610401,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610402,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610403,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610404,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610405,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610406,
+        "kind": "standard",
+        "event": 127,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610407,
+        "kind": "weak",
+        "event": 139,
+        "hit": true,
+        "lead": 9,
+        "alert_windows": 9,
+        "false_windows": 0
+      },
+      {
+        "seed": 610408,
+        "kind": "slow",
+        "event": 133,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 23,
+        "false_windows": 13
+      },
+      {
+        "seed": 610420,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610421,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610422,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610423,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610424,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610425,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610426,
+        "kind": "standard",
+        "event": 117,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610427,
+        "kind": "weak",
+        "event": 120,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 12,
+        "false_windows": 6
+      },
+      {
+        "seed": 610428,
+        "kind": "slow",
+        "event": 139,
+        "hit": true,
+        "lead": 1,
+        "alert_windows": 13,
+        "false_windows": 12
+      },
+      {
+        "seed": 610440,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610441,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610442,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610443,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610444,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610445,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610446,
+        "kind": "standard",
+        "event": 135,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 11,
+        "false_windows": 1
+      },
+      {
+        "seed": 610447,
+        "kind": "weak",
+        "event": 139,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 13,
+        "false_windows": 7
+      },
+      {
+        "seed": 610448,
+        "kind": "slow",
+        "event": 131,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 25,
+        "false_windows": 15
+      },
+      {
+        "seed": 610460,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610461,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610462,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610463,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610464,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610465,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610466,
+        "kind": "standard",
+        "event": 129,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610467,
+        "kind": "weak",
+        "event": 125,
+        "hit": true,
+        "lead": 5,
+        "alert_windows": 5,
+        "false_windows": 0
+      },
+      {
+        "seed": 610468,
+        "kind": "slow",
+        "event": 115,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 28,
+        "false_windows": 18
+      },
+      {
+        "seed": 610480,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610481,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610482,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610483,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610484,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610485,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610486,
+        "kind": "standard",
+        "event": 123,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610487,
+        "kind": "weak",
+        "event": 129,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610488,
+        "kind": "slow",
+        "event": 131,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 22,
+        "false_windows": 12
+      },
+      {
+        "seed": 610500,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610501,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610502,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610503,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610504,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610505,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610506,
+        "kind": "standard",
+        "event": 117,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 11,
+        "false_windows": 1
+      },
+      {
+        "seed": 610507,
+        "kind": "weak",
+        "event": 118,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 16,
+        "false_windows": 6
+      },
+      {
+        "seed": 610508,
+        "kind": "slow",
+        "event": 121,
+        "hit": true,
+        "lead": 9,
+        "alert_windows": 16,
+        "false_windows": 7
+      },
+      {
+        "seed": 610520,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610521,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610522,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610523,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610524,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610525,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610526,
+        "kind": "standard",
+        "event": 130,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610527,
+        "kind": "weak",
+        "event": 139,
+        "hit": true,
+        "lead": 9,
+        "alert_windows": 9,
+        "false_windows": 0
+      },
+      {
+        "seed": 610528,
+        "kind": "slow",
+        "event": 132,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 28,
+        "false_windows": 18
+      },
+      {
+        "seed": 610540,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610541,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610542,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610543,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610544,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610545,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610546,
+        "kind": "standard",
+        "event": 132,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 11,
+        "false_windows": 1
+      },
+      {
+        "seed": 610547,
+        "kind": "weak",
+        "event": 119,
+        "hit": true,
+        "lead": 4,
+        "alert_windows": 4,
+        "false_windows": 0
+      },
+      {
+        "seed": 610548,
+        "kind": "slow",
+        "event": 128,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 28,
+        "false_windows": 18
+      },
+      {
+        "seed": 610560,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610561,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610562,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610563,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610564,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610565,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610566,
+        "kind": "standard",
+        "event": 126,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 11,
+        "false_windows": 1
+      },
+      {
+        "seed": 610567,
+        "kind": "weak",
+        "event": 129,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 14,
+        "false_windows": 4
+      },
+      {
+        "seed": 610568,
+        "kind": "slow",
+        "event": 129,
+        "hit": true,
+        "lead": 9,
+        "alert_windows": 20,
+        "false_windows": 11
+      },
+      {
+        "seed": 610580,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610581,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610582,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610583,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610584,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610585,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610586,
+        "kind": "standard",
+        "event": 120,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610587,
+        "kind": "weak",
+        "event": 133,
+        "hit": true,
+        "lead": 6,
+        "alert_windows": 6,
+        "false_windows": 0
+      },
+      {
+        "seed": 610588,
+        "kind": "slow",
+        "event": 133,
+        "hit": true,
+        "lead": 9,
+        "alert_windows": 9,
+        "false_windows": 0
+      }
+    ]
+  },
+  "old_rethresholded": {
+    "threshold": 0.959,
+    "windows": {
+      "tp": 320,
+      "fn": 580,
+      "fp": 293,
+      "tn": 39307,
+      "recall": 0.35555555555555557,
+      "precision": 0.5220228384991843,
+      "false_positive_rate": 0.007398989898989899,
+      "f1": 0.4230006609385327
+    },
+    "by_kind": {
+      "normal": {
+        "cases": 30,
+        "events": 0,
+        "hits": 0,
+        "misses": 0,
+        "false_alert_cases": 0,
+        "median_lead": null
+      },
+      "thermal_only": {
+        "cases": 30,
+        "events": 0,
+        "hits": 0,
+        "misses": 0,
+        "false_alert_cases": 0,
+        "median_lead": null
+      },
+      "leakage_only": {
+        "cases": 30,
+        "events": 0,
+        "hits": 0,
+        "misses": 0,
+        "false_alert_cases": 0,
+        "median_lead": null
+      },
+      "voltage_step": {
+        "cases": 30,
+        "events": 0,
+        "hits": 0,
+        "misses": 0,
+        "false_alert_cases": 0,
+        "median_lead": null
+      },
+      "spike": {
+        "cases": 30,
+        "events": 0,
+        "hits": 0,
+        "misses": 0,
+        "false_alert_cases": 0,
+        "median_lead": null
+      },
+      "recovery": {
+        "cases": 30,
+        "events": 0,
+        "hits": 0,
+        "misses": 0,
+        "false_alert_cases": 26,
+        "median_lead": null
+      },
+      "standard": {
+        "cases": 30,
+        "events": 30,
+        "hits": 30,
+        "misses": 0,
+        "false_alert_cases": null,
+        "median_lead": 10.0
+      },
+      "weak": {
+        "cases": 30,
+        "events": 30,
+        "hits": 6,
+        "misses": 24,
+        "false_alert_cases": null,
+        "median_lead": 2.5
+      },
+      "slow": {
+        "cases": 30,
+        "events": 30,
+        "hits": 3,
+        "misses": 27,
+        "false_alert_cases": null,
+        "median_lead": 10.0
+      }
+    },
+    "cases": [
+      {
+        "seed": 610000,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610001,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610002,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610003,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610004,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610005,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 4,
+        "false_windows": 4
+      },
+      {
+        "seed": 610006,
+        "kind": "standard",
+        "event": 139,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 13,
+        "false_windows": 3
+      },
+      {
+        "seed": 610007,
+        "kind": "weak",
+        "event": 119,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610008,
+        "kind": "slow",
+        "event": 135,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610020,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610021,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610022,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610023,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610024,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610025,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 10,
+        "false_windows": 10
+      },
+      {
+        "seed": 610026,
+        "kind": "standard",
+        "event": 126,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610027,
+        "kind": "weak",
+        "event": 125,
+        "hit": true,
+        "lead": 2,
+        "alert_windows": 2,
+        "false_windows": 0
+      },
+      {
+        "seed": 610028,
+        "kind": "slow",
+        "event": 125,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610040,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610041,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610042,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610043,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610044,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610045,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 12,
+        "false_windows": 12
+      },
+      {
+        "seed": 610046,
+        "kind": "standard",
+        "event": 121,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 11,
+        "false_windows": 1
+      },
+      {
+        "seed": 610047,
+        "kind": "weak",
+        "event": 126,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610048,
+        "kind": "slow",
+        "event": 125,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 11,
+        "false_windows": 10
+      },
+      {
+        "seed": 610060,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610061,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610062,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610063,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610064,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610065,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610066,
+        "kind": "standard",
+        "event": 130,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610067,
+        "kind": "weak",
+        "event": 122,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610068,
+        "kind": "slow",
+        "event": 116,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 5,
+        "false_windows": 5
+      },
+      {
+        "seed": 610080,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610081,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610082,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610083,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610084,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610085,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 8,
+        "false_windows": 8
+      },
+      {
+        "seed": 610086,
+        "kind": "standard",
+        "event": 137,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 11,
+        "false_windows": 1
+      },
+      {
+        "seed": 610087,
+        "kind": "weak",
+        "event": 134,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610088,
+        "kind": "slow",
+        "event": 117,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 2,
+        "false_windows": 2
+      },
+      {
+        "seed": 610100,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610101,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610102,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610103,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610104,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610105,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 8,
+        "false_windows": 8
+      },
+      {
+        "seed": 610106,
+        "kind": "standard",
+        "event": 124,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610107,
+        "kind": "weak",
+        "event": 120,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610108,
+        "kind": "slow",
+        "event": 116,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610120,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610121,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610122,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610123,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610124,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610125,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 3,
+        "false_windows": 3
+      },
+      {
+        "seed": 610126,
+        "kind": "standard",
+        "event": 124,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610127,
+        "kind": "weak",
+        "event": 121,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610128,
+        "kind": "slow",
+        "event": 136,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610140,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610141,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610142,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610143,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610144,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610145,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 8,
+        "false_windows": 8
+      },
+      {
+        "seed": 610146,
+        "kind": "standard",
+        "event": 123,
+        "hit": true,
+        "lead": 9,
+        "alert_windows": 9,
+        "false_windows": 0
+      },
+      {
+        "seed": 610147,
+        "kind": "weak",
+        "event": 136,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610148,
+        "kind": "slow",
+        "event": 116,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610160,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610161,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610162,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610163,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610164,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610165,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 5,
+        "false_windows": 5
+      },
+      {
+        "seed": 610166,
+        "kind": "standard",
+        "event": 123,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610167,
+        "kind": "weak",
+        "event": 126,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610168,
+        "kind": "slow",
+        "event": 134,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610180,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610181,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610182,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610183,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610184,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610185,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 6,
+        "false_windows": 6
+      },
+      {
+        "seed": 610186,
+        "kind": "standard",
+        "event": 116,
+        "hit": true,
+        "lead": 9,
+        "alert_windows": 9,
+        "false_windows": 0
+      },
+      {
+        "seed": 610187,
+        "kind": "weak",
+        "event": 133,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610188,
+        "kind": "slow",
+        "event": 117,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 14,
+        "false_windows": 9
+      },
+      {
+        "seed": 610200,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610201,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610202,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610203,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610204,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610205,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 5,
+        "false_windows": 5
+      },
+      {
+        "seed": 610206,
+        "kind": "standard",
+        "event": 133,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 11,
+        "false_windows": 1
+      },
+      {
+        "seed": 610207,
+        "kind": "weak",
+        "event": 126,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610208,
+        "kind": "slow",
+        "event": 129,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610220,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610221,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610222,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610223,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610224,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610225,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 7,
+        "false_windows": 7
+      },
+      {
+        "seed": 610226,
+        "kind": "standard",
+        "event": 117,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 11,
+        "false_windows": 1
+      },
+      {
+        "seed": 610227,
+        "kind": "weak",
+        "event": 125,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610228,
+        "kind": "slow",
+        "event": 117,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610240,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610241,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610242,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610243,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610244,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610245,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 9,
+        "false_windows": 9
+      },
+      {
+        "seed": 610246,
+        "kind": "standard",
+        "event": 136,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610247,
+        "kind": "weak",
+        "event": 122,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610248,
+        "kind": "slow",
+        "event": 119,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610260,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610261,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610262,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610263,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610264,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610265,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610266,
+        "kind": "standard",
+        "event": 128,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 11,
+        "false_windows": 1
+      },
+      {
+        "seed": 610267,
+        "kind": "weak",
+        "event": 136,
+        "hit": true,
+        "lead": 3,
+        "alert_windows": 3,
+        "false_windows": 0
+      },
+      {
+        "seed": 610268,
+        "kind": "slow",
+        "event": 116,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610280,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610281,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610282,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610283,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610284,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610285,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 10,
+        "false_windows": 10
+      },
+      {
+        "seed": 610286,
+        "kind": "standard",
+        "event": 139,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610287,
+        "kind": "weak",
+        "event": 132,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610288,
+        "kind": "slow",
+        "event": 124,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610300,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610301,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610302,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610303,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610304,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610305,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610306,
+        "kind": "standard",
+        "event": 136,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 11,
+        "false_windows": 1
+      },
+      {
+        "seed": 610307,
+        "kind": "weak",
+        "event": 133,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610308,
+        "kind": "slow",
+        "event": 116,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 4,
+        "false_windows": 4
+      },
+      {
+        "seed": 610320,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610321,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610322,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610323,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610324,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610325,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 8,
+        "false_windows": 8
+      },
+      {
+        "seed": 610326,
+        "kind": "standard",
+        "event": 115,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 11,
+        "false_windows": 1
+      },
+      {
+        "seed": 610327,
+        "kind": "weak",
+        "event": 138,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610328,
+        "kind": "slow",
+        "event": 127,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610340,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610341,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610342,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610343,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610344,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610345,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 13,
+        "false_windows": 13
+      },
+      {
+        "seed": 610346,
+        "kind": "standard",
+        "event": 118,
+        "hit": true,
+        "lead": 9,
+        "alert_windows": 9,
+        "false_windows": 0
+      },
+      {
+        "seed": 610347,
+        "kind": "weak",
+        "event": 121,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610348,
+        "kind": "slow",
+        "event": 120,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610360,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610361,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610362,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610363,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610364,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610365,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 11,
+        "false_windows": 11
+      },
+      {
+        "seed": 610366,
+        "kind": "standard",
+        "event": 131,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 12,
+        "false_windows": 2
+      },
+      {
+        "seed": 610367,
+        "kind": "weak",
+        "event": 126,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610368,
+        "kind": "slow",
+        "event": 134,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610380,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610381,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610382,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610383,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610384,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610385,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 10,
+        "false_windows": 10
+      },
+      {
+        "seed": 610386,
+        "kind": "standard",
+        "event": 116,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 11,
+        "false_windows": 1
+      },
+      {
+        "seed": 610387,
+        "kind": "weak",
+        "event": 129,
+        "hit": true,
+        "lead": 1,
+        "alert_windows": 1,
+        "false_windows": 0
+      },
+      {
+        "seed": 610388,
+        "kind": "slow",
+        "event": 135,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 8,
+        "false_windows": 8
+      },
+      {
+        "seed": 610400,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610401,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610402,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610403,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610404,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610405,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 14,
+        "false_windows": 14
+      },
+      {
+        "seed": 610406,
+        "kind": "standard",
+        "event": 127,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610407,
+        "kind": "weak",
+        "event": 139,
+        "hit": true,
+        "lead": 1,
+        "alert_windows": 1,
+        "false_windows": 0
+      },
+      {
+        "seed": 610408,
+        "kind": "slow",
+        "event": 133,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610420,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610421,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610422,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610423,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610424,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610425,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 9,
+        "false_windows": 9
+      },
+      {
+        "seed": 610426,
+        "kind": "standard",
+        "event": 117,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610427,
+        "kind": "weak",
+        "event": 120,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610428,
+        "kind": "slow",
+        "event": 139,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610440,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610441,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610442,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610443,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610444,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610445,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 7,
+        "false_windows": 7
+      },
+      {
+        "seed": 610446,
+        "kind": "standard",
+        "event": 135,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610447,
+        "kind": "weak",
+        "event": 139,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610448,
+        "kind": "slow",
+        "event": 131,
+        "hit": true,
+        "lead": 4,
+        "alert_windows": 4,
+        "false_windows": 0
+      },
+      {
+        "seed": 610460,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610461,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610462,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610463,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610464,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610465,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 12,
+        "false_windows": 12
+      },
+      {
+        "seed": 610466,
+        "kind": "standard",
+        "event": 129,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610467,
+        "kind": "weak",
+        "event": 125,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610468,
+        "kind": "slow",
+        "event": 115,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610480,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610481,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610482,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610483,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610484,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610485,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 11,
+        "false_windows": 11
+      },
+      {
+        "seed": 610486,
+        "kind": "standard",
+        "event": 123,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 12,
+        "false_windows": 2
+      },
+      {
+        "seed": 610487,
+        "kind": "weak",
+        "event": 129,
+        "hit": true,
+        "lead": 4,
+        "alert_windows": 4,
+        "false_windows": 0
+      },
+      {
+        "seed": 610488,
+        "kind": "slow",
+        "event": 131,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610500,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610501,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610502,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610503,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610504,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610505,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 7,
+        "false_windows": 7
+      },
+      {
+        "seed": 610506,
+        "kind": "standard",
+        "event": 117,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610507,
+        "kind": "weak",
+        "event": 118,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610508,
+        "kind": "slow",
+        "event": 121,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 8,
+        "false_windows": 8
+      },
+      {
+        "seed": 610520,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610521,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610522,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610523,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610524,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610525,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610526,
+        "kind": "standard",
+        "event": 130,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 12,
+        "false_windows": 2
+      },
+      {
+        "seed": 610527,
+        "kind": "weak",
+        "event": 139,
+        "hit": true,
+        "lead": 3,
+        "alert_windows": 3,
+        "false_windows": 0
+      },
+      {
+        "seed": 610528,
+        "kind": "slow",
+        "event": 132,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610540,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610541,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610542,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610543,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610544,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610545,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 12,
+        "false_windows": 12
+      },
+      {
+        "seed": 610546,
+        "kind": "standard",
+        "event": 132,
+        "hit": true,
+        "lead": 9,
+        "alert_windows": 9,
+        "false_windows": 0
+      },
+      {
+        "seed": 610547,
+        "kind": "weak",
+        "event": 119,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610548,
+        "kind": "slow",
+        "event": 128,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610560,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610561,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610562,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610563,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610564,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610565,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 12,
+        "false_windows": 12
+      },
+      {
+        "seed": 610566,
+        "kind": "standard",
+        "event": 126,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 10,
+        "false_windows": 0
+      },
+      {
+        "seed": 610567,
+        "kind": "weak",
+        "event": 129,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610568,
+        "kind": "slow",
+        "event": 129,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610580,
+        "kind": "normal",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610581,
+        "kind": "thermal_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610582,
+        "kind": "leakage_only",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610583,
+        "kind": "voltage_step",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610584,
+        "kind": "spike",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610585,
+        "kind": "recovery",
+        "event": null,
+        "hit": null,
+        "lead": null,
+        "alert_windows": 8,
+        "false_windows": 8
+      },
+      {
+        "seed": 610586,
+        "kind": "standard",
+        "event": 120,
+        "hit": true,
+        "lead": 10,
+        "alert_windows": 11,
+        "false_windows": 1
+      },
+      {
+        "seed": 610587,
+        "kind": "weak",
+        "event": 133,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      },
+      {
+        "seed": 610588,
+        "kind": "slow",
+        "event": 133,
+        "hit": false,
+        "lead": null,
+        "alert_windows": 0,
+        "false_windows": 0
+      }
+    ]
+  }
+}

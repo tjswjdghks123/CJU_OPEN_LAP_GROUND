@@ -1,0 +1,6 @@
+Nenwala, Victor Hugo, Foulna Tcheobe, Carmel, Lavarenne, Jérémy
+Weather Station Data from Northern Cameroon (January 2024 - June 2025)
+CIRAD Dataverse, DOI: 10.18167/DVN1/S7DNJG
+https://doi.org/10.18167/DVN1/S7DNJG
+License: CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Derived evaluation and plots; raw data transformed into causal features and future activity labels. No endorsement implied.

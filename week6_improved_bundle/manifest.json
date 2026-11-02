@@ -1,0 +1,77 @@
+{
+  "raw_features": [
+    "ground_potential_a",
+    "ground_potential_b",
+    "leakage_current",
+    "element_temperature_a",
+    "element_temperature_b",
+    "element_temperature_c",
+    "relative_humidity",
+    "ambient_temperature",
+    "input_voltage",
+    "lightning_count_total"
+  ],
+  "model_features": [
+    "ground_potential_a",
+    "ground_potential_b",
+    "leakage_current",
+    "element_temperature_a",
+    "element_temperature_b",
+    "element_temperature_c",
+    "relative_humidity",
+    "ambient_temperature",
+    "input_voltage",
+    "lightning_activity_log1p"
+  ],
+  "transform_version": "count-delta-log1p-per-second-v2",
+  "threshold": 0.5482,
+  "score_decimals": 4,
+  "lookback_seconds": 30,
+  "forecast_seconds": 10,
+  "target": "invented_event_in_next_10s",
+  "data_origin": "synthetic",
+  "source_manifest": {
+    "synthetic_only": true,
+    "real_lightning_validated": false,
+    "splits": {
+      "train": [
+        410000,
+        24
+      ],
+      "validation": [
+        510000,
+        10
+      ],
+      "test": [
+        610000,
+        30
+      ]
+    },
+    "kinds": [
+      "normal",
+      "thermal_only",
+      "leakage_only",
+      "voltage_step",
+      "spike",
+      "recovery",
+      "standard",
+      "weak",
+      "slow"
+    ],
+    "epochs_max": 20,
+    "selection": "validation F1 maximum subject to window FPR <= 1%; rounded to 4 decimals",
+    "checkpoint": "lowest validation loss; patience 5",
+    "test_used_for_selection": false,
+    "negative_ambiguity": "recovery can share an initial rise with positive episodes; do not promise perfect discrimination",
+    "old_model_sha256": "55fbe69ed28d68e4fa9dd67cd96c3235d5601a00e320e0db72b8ad264288fa09",
+    "script_sha256": "a8c41c44ddbf1daff85fcc713f2af7f4a3a2df014bf9bb3e2b16691252d78e71"
+  },
+  "criteria_are_lightning_labels": false,
+  "real_lightning_prediction_validated": false,
+  "production_ready": false,
+  "automatic_control_allowed": false,
+  "artifacts": {
+    "count_model.keras": "5d8e299235edb6f5bdc1e9894482189ee61f14b0f2fe306a87feb7a24c7f8b3a",
+    "scaler.npz": "792c49b7f151f119627b29ce7077a41e52013bd7da89a6ed943bff50bba9809c"
+  }
+}

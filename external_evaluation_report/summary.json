@@ -1,0 +1,168 @@
+{
+  "source_doi": "10.18167/DVN1/S7DNJG",
+  "license": "CC BY 4.0",
+  "model": "hist_gradient_boosting",
+  "model_sha256": "bb954cb77807579ba5068bf7e7e8c8d86a216891c7dee66f4a781a43524387ed",
+  "threshold": 0.9237439555714526,
+  "target": "Same-station ATMOS41 activity in next six 5-minute records; not classified CG",
+  "history_minutes": 150,
+  "forecast_minutes": 30,
+  "raw_features": [
+    "pressure_hPa",
+    "air_temperature_C",
+    "relative_humidity_percent",
+    "wind_speed_m_s",
+    "wind_gust_m_s",
+    "precipitation_mm",
+    "solar_radiation_W_m2",
+    "lightning_count_log1p"
+  ],
+  "engineered_features": 106,
+  "trained_stations": [
+    "TA00804",
+    "TA00805"
+  ],
+  "training_before": "2025-02-17",
+  "validation_before": "2025-04-13",
+  "timing": "Source timestamp labels; nominal 5-minute records, no sub-minute event time or sensor latency audit",
+  "model_refitted": false,
+  "threshold_retuned": false,
+  "reused_previous_holdout": true,
+  "verification": "Raw SHA256, timestamps, rebuilt future labels, quiet flags, fresh model predictions and confusion counts matched",
+  "all_windows": {
+    "tp": 851,
+    "fn": 1058,
+    "fp": 608,
+    "tn": 72008,
+    "windows": 74525,
+    "recall": 0.4457831325301205,
+    "precision": 0.5832762165867033,
+    "false_positive_rate": 0.008372810399911865
+  },
+  "quiet_history_windows": {
+    "tp": 9,
+    "fn": 765,
+    "fp": 48,
+    "tn": 68899,
+    "windows": 69721,
+    "recall": 0.011627906976744186,
+    "precision": 0.15789473684210525,
+    "false_positive_rate": 0.0006961869261896819
+  },
+  "persistence": {
+    "tp": 912,
+    "fn": 997,
+    "fp": 862,
+    "tn": 71754,
+    "windows": 74525,
+    "recall": 0.4777370350969094,
+    "precision": 0.5140924464487034,
+    "false_positive_rate": 0.011870662113032941
+  },
+  "stations": [
+    {
+      "station": "TA00803_5min",
+      "first": "2025-04-13T02:25",
+      "last": "2025-06-05T14:50",
+      "tp": 194,
+      "fn": 251,
+      "fp": 166,
+      "tn": 14087,
+      "windows": 14698,
+      "recall": 0.43595505617977526,
+      "precision": 0.5388888888888889,
+      "false_positive_rate": 0.011646670876306742
+    },
+    {
+      "station": "TA00817_5min",
+      "first": "2025-04-13T02:25",
+      "last": "2025-06-05T17:55",
+      "tp": 180,
+      "fn": 269,
+      "fp": 145,
+      "tn": 14582,
+      "windows": 15176,
+      "recall": 0.40089086859688194,
+      "precision": 0.5538461538461539,
+      "false_positive_rate": 0.009845861343111292
+    },
+    {
+      "station": "TA00818_5min",
+      "first": "2025-04-13T02:25",
+      "last": "2025-06-05T16:50",
+      "tp": 137,
+      "fn": 163,
+      "fp": 92,
+      "tn": 14499,
+      "windows": 14891,
+      "recall": 0.45666666666666667,
+      "precision": 0.5982532751091703,
+      "false_positive_rate": 0.0063052566650675075
+    },
+    {
+      "station": "TA00819_5min",
+      "first": "2025-04-13T02:25",
+      "last": "2025-06-05T17:55",
+      "tp": 123,
+      "fn": 140,
+      "fp": 73,
+      "tn": 14809,
+      "windows": 15145,
+      "recall": 0.467680608365019,
+      "precision": 0.6275510204081632,
+      "false_positive_rate": 0.004905254670071227
+    },
+    {
+      "station": "TA00820_5min",
+      "first": "2025-04-13T02:25",
+      "last": "2025-06-05T17:50",
+      "tp": 217,
+      "fn": 235,
+      "fp": 132,
+      "tn": 14031,
+      "windows": 14615,
+      "recall": 0.48008849557522126,
+      "precision": 0.6217765042979942,
+      "false_positive_rate": 0.009320059309468333
+    }
+  ],
+  "hashes": {
+    "TA00803_5min": {
+      "raw": "9557ae42c84b912b106e4fa2b32c89c13a3088d9ec0ec9fe81fd6a94243aedda",
+      "predictions": "96cea96ddc457e8c9d3fa9d74d0d9b03f6780143e838c5e7e5c72007875a762e"
+    },
+    "TA00817_5min": {
+      "raw": "0a5933e888a37b36f82dfe6a7e09dc8d5a1d18b0f37b1255f1399dc159a17e50",
+      "predictions": "e68c0455c5aef060dd66f0a7011b9f8b6f41836988ec84ad97f425b76cdc0e13"
+    },
+    "TA00818_5min": {
+      "raw": "7df3faeb05306c79617b1ff4859a1447fc36af7a04904943abac5d107300b7b8",
+      "predictions": "740caa206ed22fa783f058f1786efac4bb36f476f4ef31ca307615946ba4c8e9"
+    },
+    "TA00819_5min": {
+      "raw": "071ca2aff9b0bb8b7d7784ff54054c67869e35e0f5e500bbf2e662c9f4dcf7da",
+      "predictions": "dccb55ec47e06e333a788265fd5a3926c264fd82c2b1554b3208c3d419f8bdb2"
+    },
+    "TA00820_5min": {
+      "raw": "6aa9a5553f0d36f33eb52a62eb5c728198e636d6ce6d410b41cc0e2865424000",
+      "predictions": "64502c412041f2f6d491de840ddf4bc1b68d6c02a8396a71df81f17a1b9f9fe5"
+    }
+  },
+  "quiet_onsets": {
+    "eligible": 126,
+    "hits": 5,
+    "misses": 121,
+    "nominal_lead_minutes": [
+      15,
+      10,
+      30,
+      10,
+      15
+    ],
+    "definition": "Activity after 150 minutes without recorded activity; six preceding valid scored windows required"
+  },
+  "example_selection": "First qualifying timestamp in sorted station file order; illustrative, not random or representative",
+  "device_validation": false,
+  "verified_cloud_to_ground": false,
+  "calibrated_probability": false
+}
